@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="_Silhouttes">
+
+
+
+    <meta name="description" content="从南到北 距离可以模糊时间">
+
+
+
+<title>模影零篇</title>
+
+
+
+    <link rel="icon" href="/su_loch.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">loch&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">loch&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    <article class="post-wrap page">
+        
+        <h2 class="post-title"></h2>
+        
+        <section class="post-content">
+            <!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+	<meta charset="UTF-8">
+	<title>COUNT DOWN</title>
+	<script language="javascript" type="text/javascript">  
+function Timer(year,month,day,hour,minute,second){ 
+  var leftTime = (new Date(year,month-1,day,hour,minute,second)) - (new Date());
+  var days = parseInt(leftTime / 1000 / 60 / 60 / 24 , 10);
+  var hours = parseInt(leftTime / 1000 / 60 / 60 % 24 , 10);
+  var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);
+  var seconds = parseInt(leftTime / 1000 % 60, 10);
+  days = checkTime(days); 
+  hours = checkTime(hours); 
+  minutes = checkTime(minutes); 
+  seconds = checkTime(seconds); 
+  setInterval("Timer(2021,1,18,00,00,00)",1000); 
+ // console.log(days);
+  if (isNaN(days)) { }
+  else{
+   
+  	 document.getElementById("timer").innerHTML = days+"天" + hours+"小时" + minutes+"分"+seconds+"秒"; 
+  }
+  
+} 
+function checkTime(i){ //0-9的前面加上“0”
+  if(i<10) 
+  { 
+    i = "0" + i; 
+  } 
+  return i; 
+} 
+  
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="alternate" href="/atom.xml" title="模影零篇" type="application/atom+xml">
+</head>
+<body onload="Timer()"> 
+  
+<h2>距寒假还有:</h2> 
+<div id="timer">0天0小时0分0秒</div> 
+</body> 
+</html>
+        </section>
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© _Silhouttes | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

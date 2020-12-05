@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="_Silhouttes">
+
+
+
+    <meta name="description" content="从南到北 距离可以模糊时间">
+
+
+
+<title>CNN | 模影零篇</title>
+
+
+
+    <link rel="icon" href="/su_loch.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<link rel="alternate" href="/atom.xml" title="模影零篇" type="application/atom+xml">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">loch&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">loch&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">CNN</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">_Silhouttes</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">三月 6, 2020&nbsp;&nbsp;21:23:00</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Convolutional-Neural-Network"><a href="#Convolutional-Neural-Network" class="headerlink" title="Convolutional Neural Network"></a>Convolutional Neural Network</h1><h2 id="1-输入层"><a href="#1-输入层" class="headerlink" title="1. 输入层"></a>1. 输入层</h2><p>原始图片，在计算机内用构成像素点的多维矩阵来表示。</p>
+<h2 id="2-隐层"><a href="#2-隐层" class="headerlink" title="2. 隐层"></a>2. 隐层</h2><p>convolution卷积：过滤特征</p>
+<p>ReLU线性修正单元：激活函数</p>
+<p>polling池化：降低维度并提高模型的容错性</p>
+<p><strong>降低模型的参数数目</strong></p>
+<ol>
+<li><p>局部感知野：每个神经元只需要对局部图像进行感知，然后在更高层将局部的信息综合起来得到全局的信息；</p>
+</li>
+<li><p>权值共享：对于每一层来讲，所有神经元对应的权值参数是一样的，同一层下的神经元连接参数只与特征提取的方式有关，而与具体的位置无关。</p>
+</li>
+</ol>
+<p>第一层隐层一般是用来做边缘和曲线检测</p>
+<p>第二层隐层对第一层学到的边缘曲线组合得到的一些特征</p>
+<p>第三层则会学到一些更复杂的特征</p>
+<p><strong>ReLU激活函数</strong></p>
+<p>引入非线性激励函数，深层网络具有意义（不再是输入的线性组合，可以逼近任意函数）</p>
+<p>为什么采用ReLU函数：1. 采用sigmoid等函数，计算量大，反向传播求误差梯度时涉及除法；2. 对于深层网络，sigmoid函数反向传播时，容易出现梯度消失的情况（sigmoid接近饱和区时，变换太缓慢，导数趋于0，容易造成信息丢失），从而无法完成深层网络的训练；3. ReLU会使一部分神经元的输出为0，造成了网络的稀疏性，并减少了参数的相互依存关系，缓解了过拟合问题的发生。</p>
+<p><strong>pooling池化（欠采样）</strong></p>
+<p>主要有max、average、sum等不同类型的操作</p>
+<h2 id="3-输出层"><a href="#3-输出层" class="headerlink" title="3. 输出层"></a>3. 输出层</h2><p>经过若干次的卷积+线性修真+pooling，模型会将学到的高水平特征接到一个<strong>全连接层</strong>，通过softmax函数得到输出。 </p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>_Silhouttes</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://yoursite.com/2020/03/06/CNN/">http://yoursite.com/2020/03/06/CNN/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/NN/"># NN</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/03/12/DL-tools/">DL_tools</a>
+            
+            
+            <a class="next" rel="next" href="/2019/07/11/TexLive-installation/">TexLive_installation</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© _Silhouttes | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

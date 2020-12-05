@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>模影零篇</title>
+  
+  
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-08-16T13:47:38.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>_Silhouttes</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bash</title>
+    <link href="http://yoursite.com/2020/08/16/bash%20notes/"/>
+    <id>http://yoursite.com/2020/08/16/bash%20notes/</id>
+    <published>2020-08-15T16:00:00.000Z</published>
+    <updated>2020-08-16T13:47:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="bash-notes"><a href="#bash-notes" class="headerlink" title="bash notes"></a>bash notes</h1><blockquote><p>reference: <a href="https://wangdoc.com/bash/" target="_blank" rel="noopener">https://wangdoc.com/bash/</a></p></blockquote><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p><strong>pwd</strong> – 显示当前目录</p><p><strong>echo</strong> 多行加“ ” 输出文本末尾有回车符</p><ol><li>-n参数 取消末尾的回车符</li><li>-e参数 解释单双引号中的特殊字符(e.g. \n)</li></ol><p><strong>type</strong> 判断命令的来源</p><ol><li>-a参数 查看命令的所有定义</li><li>-t参数 返回一个命令的类型：别名（alias），关键词（keyword），函数（function），内置命令（builtin）和文件（file）</li></ol><p>快捷键：</p><ul><li><code>Ctrl + L</code>：清除屏幕并将当前行移到页面顶部</li><li><code>Ctrl + C</code>：中止当前正在执行的命令</li><li><code>Shift + PageUp</code>：向上滚动</li><li><code>Shift + PageDown</code>：向下滚动</li><li><code>Ctrl + U</code>：从光标位置删除到行首</li><li><code>Ctrl + K</code>：从光标位置删除到行尾</li><li><code>Ctrl + D</code>：关闭 Shell 会话</li><li><code>↑</code>，<code>↓</code>：浏览已执行命令的历史记录</li></ul><h2 id="模式扩展-gt-简单的正则"><a href="#模式扩展-gt-简单的正则" class="headerlink" title="模式扩展-&gt;简单的正则"></a>模式扩展-&gt;简单的正则</h2><blockquote><p>shell接收命令，根据空格拆分为一个个词元，然后扩展词元里的特殊字符。</p></blockquote><p>set -f 开启        set +f 关闭</p><ol><li>波浪号 自动扩展成当前用户的主目录 ~+ equal to pwsd</li><li>问号 代表文件路径中的任意单个字符，不包含空字符</li><li>星号 代表文件路径中任意数量的任意字符，包括零个字符，但是不会匹配隐藏文件，如果需要匹配隐藏文件需要写成<code>.*</code></li><li><code>[...]</code> 匹配方括号中的任意一个字符 <code>[!...] or [^...]</code>是非的表达 匹配连字符- 只能放在方括号内部首尾位置</li><li><code>[start-end]</code> </li><li><code>{...}</code> 扩展成大括号里的所有值，各个值之间用逗号分隔，逗号前后不能有空格</li><li><code>{start..end}</code> 大括号扩展的简写形式，支持逆序 <code>{start..end..step}</code>中step为步长</li><li>变量扩展 e.g. ${SHELL}</li><li>子命令扩展 $(…) 可以扩展为另一个命令的运行结果</li><li>算数扩展$((…))</li><li>字符类</li></ol><ul><li><code>[[:alnum:]]</code>：匹配任意英文字母与数字</li><li><code>[[:alpha:]]</code>：匹配任意英文字母</li><li><code>[[:blank:]]</code>：空格和 Tab 键</li><li><code>[[:cntrl:]]</code>：ASCII 码 0-31 的不可打印字符</li><li><code>[[:digit:]]</code>：匹配任意数字 0-9</li><li><code>[[:graph:]]</code>：A-Z、a-z、0-9 和标点符号</li><li><code>[[:lower:]]</code>：匹配任意小写字母 a-z</li><li><code>[[:print:]]</code>：ASCII 码 32-127 的可打印字符</li><li><code>[[:punct:]]</code>：标点符号（除了 A-Z、a-z、0-9 的可打印字符）</li><li><code>[[:space:]]</code>：空格、Tab、LF（10）、VT（11）、FF（12）、CR（13）</li><li><code>[[:upper:]]</code>：匹配任意大写字母 A-Z</li><li><code>[[:xdigit:]]</code>：16进制字符（A-F、a-f、0-9）</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;bash-notes&quot;&gt;&lt;a href=&quot;#bash-notes&quot; class=&quot;headerlink&quot; title=&quot;bash notes&quot;&gt;&lt;/a&gt;bash notes&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;reference: &lt;a href=&quot;https</summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YOLOv4</title>
+    <link href="http://yoursite.com/2020/04/27/YOLOv4%20-%20note/"/>
+    <id>http://yoursite.com/2020/04/27/YOLOv4%20-%20note/</id>
+    <published>2020-04-27T08:03:05.000Z</published>
+    <updated>2020-04-28T10:51:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="YOLOv4-note"><a href="#YOLOv4-note" class="headerlink" title="YOLOv4 - note"></a>YOLOv4 - note</h1><blockquote><p>arxiv.org/abs/2004.10934 -&gt; translation: <a href="https://tongtianta.site/paper/89863" target="_blank" rel="noopener">https://tongtianta.site/paper/89863</a></p></blockquote><p>提高accuracy的通用功能：加权残差链接（WRC）、跨阶段部分连接（CSP）、跨小批量标准化（CmBN）、自对抗训练（SAT）、Mish-activation。</p><p>本文结合WRC、CSP、CmBN、SAT、Mish-activation、镶嵌数据增强（augmentation mosaic）、DropBlock regularization、CIoU loss</p><p><img src="https://raw.githubusercontent.com/su-loch/pics/master/img/yolov4.png" alt></p><h2 id="bags-of-freebies"><a href="#bags-of-freebies" class="headerlink" title="bags of freebies"></a>bags of freebies</h2><p>数据增强：</p><ul><li>photomatric distortion-&gt; 调整图像亮度，对比度，色相，饱和度和噪点</li><li>geometric distortion -&gt; 随机缩放，裁剪，翻转和旋转</li></ul><p>模拟对象遮挡：</p><ul><li>random erase、CutOut -&gt; 随机选择图像中的矩形区域填充为0的随机或互补值</li><li>hide-and-seek、grid mask -&gt; 随机或均匀地选择图像中的多个矩形区域替换为全0</li></ul><p>类似概念应用于feature map有：DropOut、DropConnect、<strong>DropBlock</strong></p><p>DIoU考虑了对象中心的距离、CIoU同时考虑了重叠区域 -&gt; 更好的收敛速度和准确性</p><h2 id="bags-of-specials"><a href="#bags-of-specials" class="headerlink" title="bags of specials"></a>bags of specials</h2><p>plugin modules：</p><ul><li>增强接收域：SPP、ASPP、RFB</li><li>引入注意力机制（channel-wise、point-wise）：Squeeze-and-Excitation(SE)、Spatial Attention Module(<strong>SAM</strong>)</li><li>集成特征：SFAM、ASFF、BiFPN</li><li>激活函数：LReLU、<del>PReLU</del>、<del>ReLU6</del>、<del>SELU</del>、Swish、hard-Swish、Mish</li></ul><p>post-processing：DIoU NMS</p><h2 id="架构选择"><a href="#架构选择" class="headerlink" title="架构选择"></a>架构选择</h2><p><strong>CSPDarknet53</strong>、CSPResNext50</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;YOLOv4-note&quot;&gt;&lt;a href=&quot;#YOLOv4-note&quot; class=&quot;headerlink&quot; title=&quot;YOLOv4 - note&quot;&gt;&lt;/a&gt;YOLOv4 - note&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;arxiv.org/abs/200</summary>
+      
+    
+    
+    
+    
+    <category term="毕业设计" scheme="http://yoursite.com/tags/毕业设计/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tf2.0</title>
+    <link href="http://yoursite.com/2020/04/05/tf2-0/"/>
+    <id>http://yoursite.com/2020/04/05/tf2-0/</id>
+    <published>2020-04-05T02:48:29.000Z</published>
+    <updated>2020-04-09T10:00:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>练习代码 <a href="https:github.com/su-loch/python_exercise" target="_blank" rel="noopener">pex</a> 基于tensorflow2.0</p></blockquote><h3 id="tensorflow-vs-pytorch"><a href="#tensorflow-vs-pytorch" class="headerlink" title="tensorflow_vs_pytorch"></a>tensorflow_vs_pytorch</h3><p>tf1.* 静态图</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">print(tf.__version__)<span class="comment"># 1.9.0</span></span><br><span class="line"></span><br><span class="line">x = tf.Variable(<span class="number">0.</span>)</span><br><span class="line">y = tf.Variable(<span class="number">1.</span>)</span><br><span class="line">print(x)</span><br><span class="line">print(y)</span><br><span class="line"><span class="comment"># 构建计算图</span></span><br><span class="line"><span class="comment"># x = x + y</span></span><br><span class="line">add_op = x.assign(x +y)</span><br><span class="line"><span class="comment"># y = y / 2</span></span><br><span class="line">div_op = y.assign(y / <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line">        sess.run(add_op)</span><br><span class="line">        sess.run(div_op)</span><br><span class="line">    print(x.eval())</span><br></pre></td></tr></table></figure><p>tf2.* 动态图 -&gt; tf1.x中调用tf.enable_eager_execution()方法打开eager mode</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">print(tf.__version__)   <span class="comment"># 2.0.0</span></span><br><span class="line"></span><br><span class="line">x = tf.constant(<span class="number">0.</span>)</span><br><span class="line">y = tf.constant(<span class="number">1.</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line">    x = x + y</span><br><span class="line">    y = y / <span class="number">2</span></span><br><span class="line">print(x.numpy())</span><br></pre></td></tr></table></figure><p>PyTorch 动态图</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">print(torch.__version__)    <span class="comment"># 1.4.0</span></span><br><span class="line"></span><br><span class="line">x = torch.Tensor([<span class="number">0.</span>])</span><br><span class="line">y = torch.Tensor([<span class="number">1.</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line">    x = x + y</span><br><span class="line">    y = y / <span class="number">2</span></span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="分类问题与回归问题"><a href="#分类问题与回归问题" class="headerlink" title="分类问题与回归问题"></a>分类问题与回归问题</h2><ul><li><p>分类问题预测的是类别，模型的输出是概率分布</p></li><li><p>回归问题预测是值，模型的输出是一个实数值</p></li></ul><h3 id="目标函数-↓"><a href="#目标函数-↓" class="headerlink" title="目标函数 ↓"></a>目标函数 ↓</h3><ul><li><strong>分类问题</strong>–衡量目标类别与当前预测的差距</li></ul><p>e.g. 三分类问题，输出：[0.2, 0.7, 0.1] -&gt; 第1类</p><p>真实类别第2类 -&gt; one_hot -&gt; [0, 0, 1]</p><p>one_hot编码，把正整数变为向量表达，生成一个不小于正整数的向量，只有正整数的位置为1，其余位置为0</p><ul><li>分类常用损失函数：平方差损失、交叉熵损失</li><li><strong>回归问题</strong>–预测值与真实值差距</li><li>回归常用损失函数：平方差损失、绝对值损失</li></ul><h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>tf.keras.callbacks</p><ul><li>EarlyStopping</li><li>ModelCheckpoint</li><li>TensorBoard</li></ul><p>在命令行中调用tensorboard：tensorboard –logdir=[你的文件夹名称]</p>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;练习代码 &lt;a href=&quot;https:github.com/su-loch/python_exercise&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pex&lt;/a&gt; 基于tensorflow2.0&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;tensorflow-vs-pytorch&quot;&gt;&lt;a href=&quot;#tensorflow-vs-pytorch&quot; class=&quot;headerlink&quot; title=&quot;tensorflow_vs_pytorch&quot;&gt;&lt;/a&gt;tensorflow_vs_pytorch&lt;/h3&gt;&lt;p&gt;tf1.* 静态图&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; tensorflow &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; tf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(tf.__version__)	&lt;span class=&quot;comment&quot;&gt;# 1.9.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;x = tf.Variable(&lt;span class=&quot;number&quot;&gt;0.&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;y = tf.Variable(&lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(x)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(y)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 构建计算图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# x = x + y&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;add_op = x.assign(x +y)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# y = y / 2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;div_op = y.assign(y / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; tf.Session() &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; sess:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    sess.run(tf.global_variables_initializer())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        sess.run(add_op)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        sess.run(div_op)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print(x.eval())&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;tf2.* 动态图 -&amp;gt; tf1.x中调用tf.enable_eager_execution()方法打开eager mode&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; tensorflow &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; tf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(tf.__version__)   &lt;span class=&quot;comment&quot;&gt;# 2.0.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;x = tf.constant(&lt;span class=&quot;number&quot;&gt;0.&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;y = tf.constant(&lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    x = x + y&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    y = y / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(x.numpy())&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;PyTorch 动态图&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; torch&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(torch.__version__)    &lt;span class=&quot;comment&quot;&gt;# 1.4.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;x = torch.Tensor([&lt;span class=&quot;number&quot;&gt;0.&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;y = torch.Tensor([&lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    x = x + y&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    y = y / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(x)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+    <category term="tensorflow" scheme="http://yoursite.com/tags/tensorflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YOLOv3</title>
+    <link href="http://yoursite.com/2020/04/02/YOLOv3/"/>
+    <id>http://yoursite.com/2020/04/02/YOLOv3/</id>
+    <published>2020-04-01T17:29:04.000Z</published>
+    <updated>2020-04-04T14:36:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://pjreddie.com/media/files/papers/YOLOv3.pdf" target="_blank" rel="noopener">论文地址</a></p><h2 id="YOLOv3结构图"><a href="#YOLOv3结构图" class="headerlink" title="YOLOv3结构图"></a>YOLOv3结构图</h2><p><img src="https://raw.githubusercontent.com/su-loch/pics/master/img/yolo_v3_structure.png" alt></p><ul><li>DBL：卷积 + BN(Batch Normalization) + Leaky relu</li><li>resn：n表示包含的res_unit个数</li><li>concat：张量拼接，拼接会扩充张量的维度</li></ul><h3 id="backbone"><a href="#backbone" class="headerlink" title="backbone"></a>backbone</h3><p>Darknet-53没有设置池化层和全连接层，而通过改变卷积核的步长进行张量的尺寸变换，在yolov3中没有最后的全局平均池化层，所以张量变化只考虑5层。</p><h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><p>y1、y2、y3深度都是255 = 3*（5+80），其中5是bbox的5个参数，80是COCO数据集的类别数。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://pjreddie.com/media/files/papers/YOLOv3.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;论文地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;YOLOv3结构图&quot;&gt;&lt;a href=&quot;#YOL</summary>
+      
+    
+    
+    
+    
+    <category term="毕业设计" scheme="http://yoursite.com/tags/毕业设计/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ResNet</title>
+    <link href="http://yoursite.com/2020/03/18/ResNet/"/>
+    <id>http://yoursite.com/2020/03/18/ResNet/</id>
+    <published>2020-03-18T03:05:41.000Z</published>
+    <updated>2020-04-04T14:36:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>残差网路</strong></p><p><img src="https://raw.githubusercontent.com/su-loch/pics/master/img/resnet-block.png" alt></p><p>这是一个两层神经网络。</p><p>计算过程从a[l]开始，先进行线性运算。<br>$$<br>z^{[l+1] }= W^{[l+1]}a^{[l]} + b^{[l+1]}<br>$$<br>在由激活函数g得到a[l+1]，这里g是线性整流函数relu<br>$$<br>a^{[l+1]} = g(z^{[l+1]})<br>$$<br>随后进行第二层线性运算<br>$$<br>z^{[l+2]} = W^{[l+2]}a^{[l+1]} + b^{[l+2]}<br>$$<br>再经过Relu<br>$$<br>a^{[l+2]} = g(z^{[l+2]})<br>$$<br>在残差网络中加入一点变化</p><p><img src="https://raw.githubusercontent.com/su-loch/pics/master/img/resnet.png" alt></p><p>即”跳远连接”<br>$$<br>a^{[l+2]} = g(z^{[l+2]} + a^{[l]})<br>$$<br>这样，随着网络的加深，训练误差也跟着下降。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;残差网路&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/su-loch/pics/master/img/resnet-block.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;这是一个两层神经网络</summary>
+      
+    
+    
+    
+    
+    <category term="deeplearning" scheme="http://yoursite.com/tags/deeplearning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux指令</title>
+    <link href="http://yoursite.com/2020/03/17/Linux%E6%8C%87%E4%BB%A4/"/>
+    <id>http://yoursite.com/2020/03/17/Linux%E6%8C%87%E4%BB%A4/</id>
+    <published>2020-03-17T07:09:23.000Z</published>
+    <updated>2020-04-01T17:33:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.jianshu.com/nb/37698552" target="_blank" rel="noopener">https://www.jianshu.com/nb/37698552</a></p><p><a href="https://www.jianshu.com/p/8c2af151ddc2" target="_blank" rel="noopener">https://www.jianshu.com/p/8c2af151ddc2</a></p><p><a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-shell.html</a></p><p><a href="https://www.linuxcool.com/" target="_blank" rel="noopener">linux命令大全</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.jianshu.com/nb/37698552&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.jianshu.com/nb/37698552&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http</summary>
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VID</title>
+    <link href="http://yoursite.com/2020/03/15/VID/"/>
+    <id>http://yoursite.com/2020/03/15/VID/</id>
+    <published>2020-03-15T12:53:26.000Z</published>
+    <updated>2020-03-16T14:44:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>reference paper：</p><blockquote><p>陈志欣. 基于深度学习的视频目标检测算法研究与应用[D].北方工业大学,2019.</p></blockquote><p><strong>视频目标检测（object detection from video）</strong></p><p>从2015年开始，ILSVRC新增了VID挑战任务，视频中的目标检测难题：更多的帧图像文件、由于速度快导致运动模糊和光照等问题、物体间的遮挡问题。</p><p><strong>数据集预处理</strong></p><ol><li>归一化：将原始像素压缩到[0,1]区间</li></ol><p>$$<br>\text { norm }=\frac{x_{i}-\min (x)}{\max (x)-\min (x)}<br>$$</p><ol start="2"><li>去均值化：对每个通道，移除图像的平均亮度，凸显个体差异</li></ol><p>$$<br>x_{r}, x_{g}, x_{b}=\left(x_{r}-R_{m e a n}, x_{g}-G_{m e a n}, x_{b}-B_{m e a n}\right)<br>$$</p><ol start="3"><li>标准化：使像素符合标准正态分布，在样本尺度不一致的情况下（如不同相机采集的图片，或者是来源不同的图片）</li></ol><p>$$<br>x^{\prime}=\frac{x-\mu}{\sigma}<br>$$</p><a id="more"></a><p><strong>数据增强</strong>：解决样本数量和质量不满足需求的问题</p><p>镜像翻转、随机旋转、随机错切、高斯噪声、椒盐噪声、明亮度变化（不加入影响图像本质特性的噪声）</p><p><strong>性能指标</strong></p><p>mAP、IoU、FPS、NMS</p><p><strong>可变形卷积</strong>（Deformable Convolution）-&gt; 了解卷积的多种方式</p><p><img src="https://raw.githubusercontent.com/su-loch/pics/master/img/deformable%20convolution.png" alt></p><p>refer to <a href="https://arxiv.org/pdf/1703.06211.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1703.06211.pdf</a></p><p><strong>对小目标物体的检测</strong></p><ul><li><p>数据增强：用不同尺度的图片进行训练 × </p></li><li><p>SPP 空间池化金字塔 ×</p></li><li><p>SSD 在不同尺度的特征图上引入区域检测机制 （提高有限） ×</p></li><li><p><strong>FPN网络</strong></p></li></ul><p><img src="https://raw.githubusercontent.com/su-loch/pics/master/img/FPN.png" alt></p><p>自下而上的前馈计算（池化采样），自下而上的特征融合与横向连接（最近邻上采样或双线性插值），横向对应的层特征图各像素点之间直接相加，融合后的特征还要进行3*3卷积以消除upsampling产生的混叠作用。</p><p><strong>网络的训练损失函数</strong></p><p>这一块真的看的我眼花…</p><ol><li>回归损失</li></ol><p>均方误差/平方损失/L2 损失：<br>$$<br>M S E=\frac{\sum_{i=1}^{n}\left(y_{i}-\hat{y}_{i}\right)^{2}}{n}<br>$$<br>平均绝对误差/L1 损失：</p><p>$$<br>M A E=\frac{\sum_{i=1}^{n}\left|y_{i}-\hat{y}_{i}\right|}{n}<br>$$</p><p>平均偏差误差（mean bias error）：</p><p>$$<br>M B E=\frac{\sum_{i=1}^{n}\left(y_{i}-\hat{y}_{i}\right)}{n}<br>$$</p><ol start="2"><li>分类损失</li></ol><p>Hinge Loss/多分类 SVM 损失：</p><p>$$<br>S V M L o s s=\sum_{j \neq y_{i}} \max \left(0, s_{j}-s_{y_{i}}+1\right)<br>$$</p><p>交叉熵损失/负对数似然：</p><p>$$<br>CrossEntropyLoss = -\left( y_{i} \log \left( \hat{y} _ {i} \right) + \left( 1-y _ {i} \right) \log \left(1- \hat{y}_{i} \right) \right)<br>$$<br>剩余词条待补充：multi-task loss、facol loss、GIoU、DIoU</p><p>refer to：<a href="https://zhuanlan.zhihu.com/p/112057799" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/112057799</a></p><p><strong>YOLOv3中用k-means聚类得到anchor大小和数量设置</strong></p><p><strong>VID流程</strong></p><p>Image_Feature = N_feat(Image_input) -&gt; Output = N_det(Image_Feature)提取候选框进行分类回归</p><p>Deap Feature Flow利用一种基于卷积操作的FlowNet生成前后帧的光流图，再叠加上前一时刻关键帧信息，生成本时刻关键帧最终的特征图。</p><p>FGFA将相邻帧在时序上的特征聚合到当前帧的特征中，处理运动模糊、视频散焦、奇特姿势等问题。</p><p><strong>稀疏特征传播方式提高检测速度</strong>   DFF</p><p>每隔n张（n常取10）抽取一个关键帧得到特征图，非关键帧的特征图计算为最近邻关键帧以及其与当前非关键帧之间运动变化矢量的加和。通常用光流矢量定量计算临近两帧之间的信息差值。 -&gt; FlowNet如何实现</p><p><strong>密集特征聚合方式提高检测精度</strong>   FGFA</p><p>需要计算视频每一帧的特征图，对视频的第i个时刻的关键帧，给每个时间帧分配一定权重系数，来对前后i+2r个特征图对应位置的值加权求和。 -&gt; 权重如何分配</p><p><strong>关键帧的选择优化</strong></p><ul><li>基于特征一致性的关键帧调度策略：</li></ul><p>$$<br>key = is_{-}key \left( B_{k \rightarrow i} \right)<br>$$</p><p>$$<br>i s_{k e y}\left(Q_{k \rightarrow i}\right) = \left [ \frac{1}{N_{p}} \sum_{p} 1 \left ( B_{k \rightarrow i}(p) \leq \tau \right ) \right ] &gt; \gamma<br>$$<br>前后两个参数分别设置为0.1 和 0.2</p><ul><li><p>FlowNetSimple作为光流计算网络</p></li><li><p>设计Tubelet结构存放<strong>低检测关键帧</strong>前后r帧信息，做密特征聚合使用，优化此关键帧的检测精度。</p></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;reference paper：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;陈志欣. 基于深度学习的视频目标检测算法研究与应用[D].北方工业大学,2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;视频目标检测（object detection from video）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;从2015年开始，ILSVRC新增了VID挑战任务，视频中的目标检测难题：更多的帧图像文件、由于速度快导致运动模糊和光照等问题、物体间的遮挡问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;数据集预处理&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;归一化：将原始像素压缩到[0,1]区间&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$&lt;br&gt;\text { norm }=\frac{x_{i}-\min (x)}{\max (x)-\min (x)}&lt;br&gt;$$&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;去均值化：对每个通道，移除图像的平均亮度，凸显个体差异&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$&lt;br&gt;x_{r}, x_{g}, x_{b}=\left(x_{r}-R_{m e a n}, x_{g}-G_{m e a n}, x_{b}-B_{m e a n}\right)&lt;br&gt;$$&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;标准化：使像素符合标准正态分布，在样本尺度不一致的情况下（如不同相机采集的图片，或者是来源不同的图片）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$&lt;br&gt;x^{\prime}=\frac{x-\mu}{\sigma}&lt;br&gt;$$&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="cv" scheme="http://yoursite.com/tags/cv/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anaconda使用tips</title>
+    <link href="http://yoursite.com/2020/03/13/Anaconda%E4%BD%BF%E7%94%A8tips/"/>
+    <id>http://yoursite.com/2020/03/13/Anaconda%E4%BD%BF%E7%94%A8tips/</id>
+    <published>2020-03-13T11:57:12.000Z</published>
+    <updated>2020-03-13T12:59:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天为了安装tensorflow踩了不少坑🤢，主要是anaconda环境安装的问题，写点笔记记下来</p><p>新建一个虚拟环境 conda create -n 环境名 python=3.7 （版本自己选择），创建的环境在./envs文件夹下。</p><p>conda activate 环境名 激活</p><p>conda deactivate 关闭回到base环境</p><p>conda remove -n 环境名 –all 删除已有环境</p><p>conda list 查看已安装package</p><p>换源就不说了，注意在修改.condarc文件时如果运行报错，把里面的https改为http即可。</p><p>因为直接使用conda下载速度太慢，所以选择离线安装。首先在清华镜像源下载<a href="https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/tensorflow/" target="_blank" rel="noopener">tensorflow</a>和<a href="https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/opencv-python/" target="_blank" rel="noopener">opencv</a>，选择对应平台和python版本的.whl文件，放在./Lib/site-packages/文件夹下。cd到当前目录，pip install xxxx.whl安装即可。如果出现报错无法定位程序输入点的问题把Anaconda3/DLLS下libssl-1_1-x64.dll文件到覆盖Anaconda3/Library/bin中，一路yes就可以完成安装。安错版本pip uninstall tensorflow卸载</p><p>在选择tensorflow版本的时候，注意自己的电脑是否支持当前版本。</p><p><strong>reference：</strong></p><p><a href="https://blog.csdn.net/qq_37465638/article/details/100071259" target="_blank" rel="noopener">无法定位程序输入点</a></p><p><a href="https://zhuanlan.zhihu.com/p/102324325" target="_blank" rel="noopener">tf2.0安装</a></p><p><a href="https://www.cnblogs.com/zhaochunhui/p/10839462.html" target="_blank" rel="noopener">版本选择</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;今天为了安装tensorflow踩了不少坑🤢，主要是anaconda环境安装的问题，写点笔记记下来&lt;/p&gt;
+&lt;p&gt;新建一个虚拟环境 conda create -n 环境名 python=3.7 （版本自己选择），创建的环境在./envs文件夹下。&lt;/p&gt;
+&lt;p&gt;conda</summary>
+      
+    
+    
+    
+    
+    <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DL_tools</title>
+    <link href="http://yoursite.com/2020/03/12/DL-tools/"/>
+    <id>http://yoursite.com/2020/03/12/DL-tools/</id>
+    <published>2020-03-12T08:50:55.000Z</published>
+    <updated>2020-03-12T09:13:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一些深度学习框架"><a href="#一些深度学习框架" class="headerlink" title="一些深度学习框架"></a>一些深度学习框架</h1><ol><li>Caffe：代码基于C++（训练速度快），入门级、上手快（修改一些配置文件即可），适合新手了解深度学习任务中的各种参数；</li><li>Keras：基于Theano或TensorFlow的高级框架，可快速构建网络，不用了解网络的底层设计；</li><li>TensorFlow：有高级的API（tf.Keras等），也可以自己从零开始构建一个新的网络，但是1.x版本静态图问题不好调试，2.0貌似解决了这个问题（尝试使用这个做毕设，不知道学长用的是哪个）；</li><li>Pytorch：科研人员都说好用的框架，上手快、好搭建，但是工业上采用tensorflow更多。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;一些深度学习框架&quot;&gt;&lt;a href=&quot;#一些深度学习框架&quot; class=&quot;headerlink&quot; title=&quot;一些深度学习框架&quot;&gt;&lt;/a&gt;一些深度学习框架&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;Caffe：代码基于C++（训练速度快），入门级、上手快（修改一些配置文件即可）</summary>
+      
+    
+    
+    
+    
+    <category term="深度学习" scheme="http://yoursite.com/tags/深度学习/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CNN</title>
+    <link href="http://yoursite.com/2020/03/06/CNN/"/>
+    <id>http://yoursite.com/2020/03/06/CNN/</id>
+    <published>2020-03-06T13:23:00.000Z</published>
+    <updated>2020-03-06T13:42:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Convolutional-Neural-Network"><a href="#Convolutional-Neural-Network" class="headerlink" title="Convolutional Neural Network"></a>Convolutional Neural Network</h1><h2 id="1-输入层"><a href="#1-输入层" class="headerlink" title="1. 输入层"></a>1. 输入层</h2><p>原始图片，在计算机内用构成像素点的多维矩阵来表示。</p><h2 id="2-隐层"><a href="#2-隐层" class="headerlink" title="2. 隐层"></a>2. 隐层</h2><p>convolution卷积：过滤特征</p><p>ReLU线性修正单元：激活函数</p><p>polling池化：降低维度并提高模型的容错性</p><p><strong>降低模型的参数数目</strong></p><ol><li><p>局部感知野：每个神经元只需要对局部图像进行感知，然后在更高层将局部的信息综合起来得到全局的信息；</p></li><li><p>权值共享：对于每一层来讲，所有神经元对应的权值参数是一样的，同一层下的神经元连接参数只与特征提取的方式有关，而与具体的位置无关。</p></li></ol><p>第一层隐层一般是用来做边缘和曲线检测</p><p>第二层隐层对第一层学到的边缘曲线组合得到的一些特征</p><p>第三层则会学到一些更复杂的特征</p><p><strong>ReLU激活函数</strong></p><p>引入非线性激励函数，深层网络具有意义（不再是输入的线性组合，可以逼近任意函数）</p><p>为什么采用ReLU函数：1. 采用sigmoid等函数，计算量大，反向传播求误差梯度时涉及除法；2. 对于深层网络，sigmoid函数反向传播时，容易出现梯度消失的情况（sigmoid接近饱和区时，变换太缓慢，导数趋于0，容易造成信息丢失），从而无法完成深层网络的训练；3. ReLU会使一部分神经元的输出为0，造成了网络的稀疏性，并减少了参数的相互依存关系，缓解了过拟合问题的发生。</p><p><strong>pooling池化（欠采样）</strong></p><p>主要有max、average、sum等不同类型的操作</p><h2 id="3-输出层"><a href="#3-输出层" class="headerlink" title="3. 输出层"></a>3. 输出层</h2><p>经过若干次的卷积+线性修真+pooling，模型会将学到的高水平特征接到一个<strong>全连接层</strong>，通过softmax函数得到输出。 </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Convolutional-Neural-Network&quot;&gt;&lt;a href=&quot;#Convolutional-Neural-Network&quot; class=&quot;headerlink&quot; title=&quot;Convolutional Neural Network&quot;&gt;&lt;/a&gt;Co</summary>
+      
+    
+    
+    
+    
+    <category term="NN" scheme="http://yoursite.com/tags/NN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TexLive_installation</title>
+    <link href="http://yoursite.com/2019/07/11/TexLive-installation/"/>
+    <id>http://yoursite.com/2019/07/11/TexLive-installation/</id>
+    <published>2019-07-11T08:02:40.000Z</published>
+    <updated>2019-08-18T07:19:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="TexLive-VScode-搭建LaTex编译环境"><a href="#TexLive-VScode-搭建LaTex编译环境" class="headerlink" title="TexLive + VScode 搭建LaTex编译环境"></a>TexLive + VScode 搭建LaTex编译环境</h1><p>最近对LaTex十分感兴趣（因为好看），百度了很多教程，最后决定在VScode上配置环境。</p><fancybox><br><br><img src="/img/texlive_test.png" alt><br><br></fancybox><a id="more"></a><ol><li><p>下载<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">TexLive镜像文件</a>(清华大学镜像)，选择texlive2019.iso下载即可；</p></li><li><p>iso文件解压后，在文件夹中点击install-tl-advanced.bat或install-tl-windows.bat文件均可，其中可进行一些安装地址和组件的配置，安装时间较长；</p></li><li><p>在VScode中安装插件：LaTex language support, LaTex Workshop</p></li><li><p>对latex编译环境进行配置：在设置中搜索latex，对setting.json进行编辑，加入以下代码段：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&quot;latex-workshop.latex.tools&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;-pdf&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;bibtex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;bibtex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;%DOCFILE%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;latex-workshop.latex.recipes&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;xelatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;pdflatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;latexmk&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex -&gt; bibtex -&gt; pdflatex*2&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;pdflatex&quot;,</span><br><span class="line">                &quot;bibtex&quot;,</span><br><span class="line">                &quot;pdflatex&quot;,</span><br><span class="line">                &quot;pdflatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;latex-workshop.view.pdf.viewer&quot;: &quot;tab&quot;,</span><br><span class="line">    &quot;latex-workshop.latex.clean.subfolder.enabled&quot;: true //这里要选择true清除编译过程中产生的文件</span><br></pre></td></tr></table></figure></li><li><p>创建文件test.tex，Ctrl+S保存编译，得到PDF文件。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">    \title&#123;TexLive + VScode 环境配置&#125;</span><br><span class="line">    \author&#123;Silhouettes&#125;</span><br><span class="line">    \date&#123;\today&#125;</span><br><span class="line">    \begin&#123;document&#125;</span><br><span class="line">    \maketitle</span><br><span class="line">    This is the beginning of the article.\\</span><br><span class="line">    </span><br><span class="line">    编译成功！\\</span><br><span class="line"></span><br><span class="line">    $ &#123;f&#125;&apos;(0) =  \left. \frac&#123;df&#125;&#123;dx&#125; \right|_&#123;x=0&#125; $</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure><p>这里要注意tex文件要按utf-8编码，如果编译后出现乱码，可以更换编码方式重新保存后再编译一次。</p></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;TexLive-VScode-搭建LaTex编译环境&quot;&gt;&lt;a href=&quot;#TexLive-VScode-搭建LaTex编译环境&quot; class=&quot;headerlink&quot; title=&quot;TexLive + VScode 搭建LaTex编译环境&quot;&gt;&lt;/a&gt;TexLive + VScode 搭建LaTex编译环境&lt;/h1&gt;&lt;p&gt;最近对LaTex十分感兴趣（因为好看），百度了很多教程，最后决定在VScode上配置环境。&lt;/p&gt;
+&lt;fancybox&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;/img/texlive_test.png&quot; alt&gt;&lt;br&gt;&lt;br&gt;&lt;/fancybox&gt;</summary>
+    
+    
+    
+    
+    <category term="LaTex" scheme="http://yoursite.com/tags/LaTex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>latex2word</title>
+    <link href="http://yoursite.com/2019/07/06/latex2word/"/>
+    <id>http://yoursite.com/2019/07/06/latex2word/</id>
+    <published>2019-07-06T10:21:19.000Z</published>
+    <updated>2019-08-18T07:20:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="latex2word"><a href="#latex2word" class="headerlink" title="latex2word"></a>latex2word</h1><p>突然想，能不能把在latex上生成的数学公式导入word里面，因为word自带的公式编辑器确实不是很好用，相较之下latex生成的公式十分精致。</p><p>搜到了很多教程，挑了我觉得最方便的一种：</p><p>先用<a href="https://mathpix.com/" target="_blank" rel="noopener">Mathpix</a>把需要的公式截图翻译成latex语言，再copy到<a href="https://www.latex4technics.com/" target="_blank" rel="noopener">Online LaTeX Equation Editor</a>网站，在MathJax框右键Show Math As项MathML Code选项，在word中 Alt 加 = 快捷键生成一个公式文本框将前面弹出界面的代码全部复制粘贴即可。</p><fancybox><br><br><img src="/img/step_1.gif" alt="step_1"><br><br></fancybox><fancybox><br><br><img src="/img/step_2.gif" alt="step_2"><br><br></fancybox><p>当然这是一种偷懒的方法，在Word2016中的公式编辑器中已经支持了一部分的LaTeX语法（比如\partial、\sum等等），可以很方便地输入一些简单的公式。</p><p>这个方法主要是用来抄理论的时候快速打出公式用的（不是。</p><p>/暑假愉快</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;latex2word&quot;&gt;&lt;a href=&quot;#latex2word&quot; class=&quot;headerlink&quot; title=&quot;latex2word&quot;&gt;&lt;/a&gt;latex2word&lt;/h1&gt;&lt;p&gt;突然想，能不能把在latex上生成的数学公式导入word里面，因为word自</summary>
+      
+    
+    
+    
+    
+    <category term="daily" scheme="http://yoursite.com/tags/daily/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tensorflow_learning_2</title>
+    <link href="http://yoursite.com/2019/05/20/tensorflow-learning-2/"/>
+    <id>http://yoursite.com/2019/05/20/tensorflow-learning-2/</id>
+    <published>2019-05-20T11:53:43.000Z</published>
+    <updated>2019-05-20T13:57:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="tensorflow学习笔记-2"><a href="#tensorflow学习笔记-2" class="headerlink" title="tensorflow学习笔记_2"></a>tensorflow学习笔记_2</h1><h2 id="计算图与张量"><a href="#计算图与张量" class="headerlink" title="计算图与张量"></a>计算图与张量</h2><p>TensorFlow中的计算可以表示为一个有向图（<strong>计算图</strong>），其中每一个运算操作作为一个节点，节点与节点的连接称为边，一张计算图描述了数据的计算流程，我们可以对计算图上的各个分支进行改变来达到我们的运算目的。在计算图的边中流动的数据被称为<strong>张量</strong>（tensor），张量的数据类型可以事先定义，也可以通过计算图的结构推导得出。</p><p>一个运算操作代表了一类抽象运算（如矩阵乘法或向量加法），运算操作必须有自己的属性，但是所有属性都必须被预先设置，或者在计算图沿着边运行时可以被推断出来。</p><h2 id="会话-Session"><a href="#会话-Session" class="headerlink" title="会话 Session"></a>会话 Session</h2><p>session是用户使用tensorflow的互交式接口，用户可以通过session的Extend方法添加新的节点和边来创建计算图，然后通过session的Run方法执行计算图。</p><p>大多数运算中，tensor不会一直保留下去。而Variable是一类特殊的运算操作，可以将一些需要保留的tensor储存在内存或者显存当中。每执行一次计算图后，Variable中的tensor都会被保存，同时在计算过程中，tensor的值也可以被更新。</p><hr><p>csdn上还是有很多的教程   <a href="https://www.cnblogs.com/hypnus-ly/p/8040951.html" target="_blank" rel="noopener">概念理解</a></p><h2 id="MNIST手写数字识别"><a href="#MNIST手写数字识别" class="headerlink" title="MNIST手写数字识别"></a>MNIST手写数字识别</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">mnist = input_data.read_data_sets(<span class="string">"MNIST_data/"</span>, one_hot=<span class="literal">True</span>)</span><br><span class="line">print(mnist.train.images.shape,mnist.train.labels.shape)</span><br><span class="line">print(mnist.test.images.shape,mnist.test.labels.shape)</span><br><span class="line">print(mnist.validation.images.shape,mnist.validation.labels.shape)</span><br></pre></td></tr></table></figure><p>结果输出为</p><p>(55000, 784) (55000, 10)<br>(10000, 784) (10000, 10)<br>(5000, 784) (5000, 10)</p><p><a href="https://github.com/yhlleo/mnist" target="_blank" rel="noopener">一个例程</a> 存</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;tensorflow学习笔记-2&quot;&gt;&lt;a href=&quot;#tensorflow学习笔记-2&quot; class=&quot;headerlink&quot; title=&quot;tensorflow学习笔记_2&quot;&gt;&lt;/a&gt;tensorflow学习笔记_2&lt;/h1&gt;&lt;h2 id=&quot;计算图与张量&quot;&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://yoursite.com/categories/机器学习/"/>
+    
+    
+    <category term="tensorflow" scheme="http://yoursite.com/tags/tensorflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tensorflow_learning_1</title>
+    <link href="http://yoursite.com/2019/05/19/tensorflow-learning-1/"/>
+    <id>http://yoursite.com/2019/05/19/tensorflow-learning-1/</id>
+    <published>2019-05-19T09:40:58.000Z</published>
+    <updated>2019-05-20T13:23:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="tensorflow学习笔记-1"><a href="#tensorflow学习笔记-1" class="headerlink" title="tensorflow学习笔记_1"></a>tensorflow学习笔记_1</h1><h2 id="环境安装-CPU版本的tensorflow"><a href="#环境安装-CPU版本的tensorflow" class="headerlink" title="环境安装 CPU版本的tensorflow"></a>环境安装 CPU版本的tensorflow</h2><ol><li><p>安装anaconda或者miniconda 这里附上 <a href="https://blog.csdn.net/qq_36306781/article/details/81254832?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">一个很完整的参考教程</a>，因为我的anaconda安装了python3.7，而3.5对tensorflow的兼容性最好（听说，所以在anaconda中新建一个环境安装python3.5和tensorflow1.13.1。</p></li><li><p>首先 conda creat -n tensorflow python=3.5 新建一个环境名字为tensorflow，然后发现Anaconda3/envs/目录下出现了tensorflow的文件夹。</p></li><li><p>激活环境 activate tensorflow，关闭这个环境用命令 deactivate</p></li><li><p>安装tensorflow  conda install tensorflow</p><blockquote><p>conda安装比pip要方便不少，而且conda安装的tf效率要比pip安装的高。</p></blockquote></li><li><p>验证是否安装成功</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">hello = tf.constant(<span class="string">'Hello,tensorflow'</span>)</span><br><span class="line">sess = tf.Session()</span><br><span class="line">print(sess.run(hello))</span><br></pre></td></tr></table></figure><p>报错的话加上这段话</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os </span><br><span class="line">os.environ[<span class="string">'TF_CPP_MIN_LOG_LEVEL'</span>] = <span class="string">'2'</span></span><br></pre></td></tr></table></figure></li></ol><p><strong>tips：</strong>上面的方法将tensorflow安装在一个单独的环境当中，其他模块如numpy、opencv等都要重新配置，尝试将/Anaconda3/envs/tensorflow文件夹全部复制到/Anaconda3/Lib/site-packages下运行（参考了一篇安装在linux上的文章，结果不是很理想，放弃。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;tensorflow学习笔记-1&quot;&gt;&lt;a href=&quot;#tensorflow学习笔记-1&quot; class=&quot;headerlink&quot; title=&quot;tensorflow学习笔记_1&quot;&gt;&lt;/a&gt;tensorflow学习笔记_1&lt;/h1&gt;&lt;h2 id=&quot;环境安装-CPU版</summary>
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://yoursite.com/categories/机器学习/"/>
+    
+    
+    <category term="tensorflow" scheme="http://yoursite.com/tags/tensorflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CDN_jsdelivr</title>
+    <link href="http://yoursite.com/2019/05/06/CDN-jsdelivr/"/>
+    <id>http://yoursite.com/2019/05/06/CDN-jsdelivr/</id>
+    <published>2019-05-06T05:08:48.000Z</published>
+    <updated>2019-05-08T10:31:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="blog引用资源路径由本地替换为CDN"><a href="#blog引用资源路径由本地替换为CDN" class="headerlink" title="blog引用资源路径由本地替换为CDN"></a>blog引用资源路径由本地替换为CDN</h1><blockquote><p>内容分发网络（Content Delivery Network），依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。</p></blockquote><p>由于GitHub资源在国内加载过慢，有很多人选择通过CDN来提高资源加载速度，我选择了免费、速度快的<a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsdelivr</a>，CDN的本质是缓存。</p><a id="more"></a><h2 id="1-在GitHub上Create-a-new-repository"><a href="#1-在GitHub上Create-a-new-repository" class="headerlink" title="1. 在GitHub上Create a new repository"></a>1. 在GitHub上Create a new repository</h2><p>得到repository name</p><h2 id="2-clone-这个仓库到本地"><a href="#2-clone-这个仓库到本地" class="headerlink" title="2. clone 这个仓库到本地"></a>2. clone 这个仓库到本地</h2><p>在文件夹下git bash here</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 你的仓库地址</span><br></pre></td></tr></table></figure><h2 id="3-上传资源"><a href="#3-上传资源" class="headerlink" title="3. 上传资源"></a>3. 上传资源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git status   # 查看仓库状态</span><br><span class="line">git add .    # 所有文件添加至缓存区</span><br><span class="line">git commit -m &quot;your_commit&quot;</span><br><span class="line">git push     # 推送至远端仓库</span><br></pre></td></tr></table></figure><h2 id="4-发布仓库"><a href="#4-发布仓库" class="headerlink" title="4. 发布仓库"></a>4. 发布仓库</h2><p>点击releases，版本号自定义</p><h2 id="5-引用资源"><a href="#5-引用资源" class="headerlink" title="5. 引用资源"></a>5. 引用资源</h2><p>通过路径：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/user/repo@version/file</span><br><span class="line">https://cdn.jsdelivr.net/gh/你的github用户名/你的仓库名@发布的版本号/文件路径</span><br></pre></td></tr></table></figure><p>可以CDN引用资源啦~</p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;blog引用资源路径由本地替换为CDN&quot;&gt;&lt;a href=&quot;#blog引用资源路径由本地替换为CDN&quot; class=&quot;headerlink&quot; title=&quot;blog引用资源路径由本地替换为CDN&quot;&gt;&lt;/a&gt;blog引用资源路径由本地替换为CDN&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;内容分发网络（Content Delivery Network），依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;由于GitHub资源在国内加载过慢，有很多人选择通过CDN来提高资源加载速度，我选择了免费、速度快的&lt;a href=&quot;https://www.jsdelivr.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;jsdelivr&lt;/a&gt;，CDN的本质是缓存。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="HEXO搭建" scheme="http://yoursite.com/categories/HEXO搭建/"/>
+    
+    
+    <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+    <category term="CDN" scheme="http://yoursite.com/tags/CDN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>some_thoughts</title>
+    <link href="http://yoursite.com/2019/05/04/some-thoughts/"/>
+    <id>http://yoursite.com/2019/05/04/some-thoughts/</id>
+    <published>2019-05-03T16:36:43.000Z</published>
+    <updated>2019-05-08T14:36:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="some-thoughts"><a href="#some-thoughts" class="headerlink" title="some_thoughts"></a>some_thoughts</h1><p>晚上花了一个小时修改了blog的主题，最近电脑看吐，又想一个星期不开电脑，日子会是多么快活。又后悔当初为什么不去学文科kkk…</p><p>找了很久才发现，自上次更新了主题后，默认使用cdn加载css，注释掉才会使用本地less文件进行渲染（看到Github上有人跟我遇到了一样的问题hhh，不知道他解决了没有）</p><a id="more"></a><p>最近有一个<a href="https://app.yinxiang.com/shard/s24/nl/22995656/2a9e47d9-cad6-4391-870f-d3884309b380/" target="_blank" rel="noopener">关于朋友的胡思乱想</a> 有兴趣就看看吧</p><p>另，<a href="https://typora.io" target="_blank" rel="noopener">Trpora</a>实在是太好用了不得不推荐一下</p><p>评论区欢迎留言</p><p><img src="https://cdn.jsdelivr.net/gh/su-loch/CDN_for_webs@1.0.0\img\太宰也.jpg" alt="哒宰镇"></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;some-thoughts&quot;&gt;&lt;a href=&quot;#some-thoughts&quot; class=&quot;headerlink&quot; title=&quot;some_thoughts&quot;&gt;&lt;/a&gt;some_thoughts&lt;/h1&gt;&lt;p&gt;晚上花了一个小时修改了blog的主题，最近电脑看吐，又想一个星期不开电脑，日子会是多么快活。又后悔当初为什么不去学文科kkk…&lt;/p&gt;
+&lt;p&gt;找了很久才发现，自上次更新了主题后，默认使用cdn加载css，注释掉才会使用本地less文件进行渲染（看到Github上有人跟我遇到了一样的问题hhh，不知道他解决了没有）&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="HEXO搭建" scheme="http://yoursite.com/categories/HEXO搭建/"/>
+    
+    
+    <category term="daily" scheme="http://yoursite.com/tags/daily/"/>
+    
+    <category term="胡思乱想" scheme="http://yoursite.com/tags/胡思乱想/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>import_pdb</title>
+    <link href="http://yoursite.com/2019/03/30/import-pdb/"/>
+    <id>http://yoursite.com/2019/03/30/import-pdb/</id>
+    <published>2019-03-30T14:58:26.000Z</published>
+    <updated>2019-05-08T10:31:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="pdb-–-the-python-debugger"><a href="#pdb-–-the-python-debugger" class="headerlink" title="pdb – the python debugger"></a>pdb – the python debugger</h1><p>最近在python学习中用到了pdb调试模块（在没有IDE的情况下debug应该特别好用）,做一点笔记：</p><p>首先, import pdb, 在需要调试的地方设置断点 pdb.set_trace(), 执行程序进入断点。</p><a id="more"></a><p>常用命令</p><table><thead><tr><th>命令</th><th>功能 </th></tr></thead><tbody><tr><td>   next(n)</td><td>执行下一行</td></tr><tr><td>   exit(q)</td><td>中止调试并退出</td></tr><tr><td>   continue(c)</td><td>停止debug继续执行程序</td></tr><tr><td>   where(w)</td><td>找出当前代码的运行位置</td></tr><tr><td>   list(l)</td><td>显示当前行的代码段</td></tr><tr><td>   print(p)</td><td>打印变量的值</td></tr><tr><td>   step(s)</td><td>进入函数</td></tr><tr><td>   return(r)</td><td>执行代码直到当前函数返回(return)</td></tr><tr><td>   help</td><td>帮助</td></tr></tbody></table><p>参考<br><a href="https://docs.python.org/zh-cn/3.7/library/pdb.html" target="_blank" rel="noopener">python pdb模块 官方文档</a> 版本：3.7</p><blockquote><p>The module pdb defines an interactive source code debugger for Python programs. It supports setting (conditional) breakpoints and single stepping at the source line level, inspection of stack frames, source code listing, and evaluation of arbitrary Python code in the context of any stack frame. It also supports post-mortem debugging and can be called under program control.</p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;pdb-–-the-python-debugger&quot;&gt;&lt;a href=&quot;#pdb-–-the-python-debugger&quot; class=&quot;headerlink&quot; title=&quot;pdb – the python debugger&quot;&gt;&lt;/a&gt;pdb – the python debugger&lt;/h1&gt;&lt;p&gt;最近在python学习中用到了pdb调试模块（在没有IDE的情况下debug应该特别好用）,做一点笔记：&lt;/p&gt;
+&lt;p&gt;首先, import pdb, 在需要调试的地方设置断点 pdb.set_trace(), 执行程序进入断点。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Python学习" scheme="http://yoursite.com/categories/Python学习/"/>
+    
+    
+    <category term="learning" scheme="http://yoursite.com/tags/learning/"/>
+    
+    <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>About_https</title>
+    <link href="http://yoursite.com/2019/03/21/About-https/"/>
+    <id>http://yoursite.com/2019/03/21/About-https/</id>
+    <published>2019-03-21T04:20:34.000Z</published>
+    <updated>2019-05-08T10:31:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Cloudflare给域名加个s"><a href="#Cloudflare给域名加个s" class="headerlink" title="Cloudflare给域名加个s"></a>Cloudflare给域名加个s</h1><blockquote><p>Here at Cloudflare, we make the Internet work the way it should. Offering CDN, DNS, DDoS protection and security, find out how we can help your site.</p></blockquote><hr><p>上完课回宿舍看到一篇博主的推送要给自己的个人网站加个s，所以我决定也给自己的blog加个s。</p><blockquote><p>超文本传输协议HTTP以明文的方式发送信息，而安全套接字层超文本传输协议HTTPS在HTTP的基础上加入了SSL协议，对传输的信息进行了加密，提高了安全性。</p></blockquote><p>有两种方法，一是用Cloudflare提供的免费https服务，二是在阿里云免费申请一个一年的免费证书，我选择了前者：</p><ol><li>在Cloudflare上注册一个账号;</li><li>Add websites：输入自己的域名;</li><li>Add DNS Records：Cloudflare会将扫描到的DNS记录展示在页面上，如果记录符合Cloudflare的要求，会在记录的Status中显示一个橙色的云在箭头上的图标，如果没有则需要自己添加需要的DNS记录;</li><li>Select Plan：Free website，可以免费使用;</li><li>Update Nameservers：Cloudflare提供了新的DNS服务器地址，在域名注册商(我用了阿里云）的域名设置中将之前的DNS服务器地址替换掉即可,等待一段时间后域名映射在服务器上;</li><li>Enable Https：在Crypto中设置 SSL 为 Flexible，Always Use HTTPS 选项为on(将http都重定向为https);</li><li>Create Pages Rules：Page Rules中设置路由规则，输入 username.top/*(即你的域名)，网站上的解释很清楚，结束。</li></ol><p>等待一段时间就可以看到自己的域名前面出现了https啦~</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Cloudflare给域名加个s&quot;&gt;&lt;a href=&quot;#Cloudflare给域名加个s&quot; class=&quot;headerlink&quot; title=&quot;Cloudflare给域名加个s&quot;&gt;&lt;/a&gt;Cloudflare给域名加个s&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;H</summary>
+      
+    
+    
+    
+    <category term="HEXO搭建" scheme="http://yoursite.com/categories/HEXO搭建/"/>
+    
+    
+    <category term="learning" scheme="http://yoursite.com/tags/learning/"/>
+    
+    <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>a_tool</title>
+    <link href="http://yoursite.com/2019/03/15/a-tool/"/>
+    <id>http://yoursite.com/2019/03/15/a-tool/</id>
+    <published>2019-03-15T15:47:59.000Z</published>
+    <updated>2019-05-04T04:22:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="深夜的发现"><a href="#深夜的发现" class="headerlink" title="深夜的发现"></a>深夜的发现</h1><p>围观了大佬的公众号，想从github上面把代码下载下来<del>学习</del>一下,但是遇到了要把一整个仓库的文件都clone下来的问题…于是百度了下载指定文件夹下文件的做法，发现最简单的方法是把链接直接复制在Downgit网站上(这里附上MinhasKamal/DownGit的网址: <a href="https://minhaskamal.github.io/DownGit/" target="_blank">DownGit</a>)，下载即可。但是又遇到了网站加载不出来的问题，最后发现了另一个大佬移植的网站，尽管这个网址的资源加载也有问题，但是总的来说还可以用，就是等待时间可能会比较长，给人的感觉是这个网站也不能用(<del>嗯？？我折腾了这么久还是不能用？？</del>)，看样子已经是很久没有人维护了…网址如下: <a href="http://downgit.zhoudaxiaa.com/#/home" target="_blank">周大侠啊DownGit</a><br>安了pygame模块就可以愉快地玩游戏啦~<br>另，最近觉得很有意思的表情包上面的梗，以及附上新的md语法介绍：<a href="https://coding.net/help/doc/project/markdown.html" target="_blank" rel="noopener">MarkDown基本语法</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String s=<span class="string">"\u4f18\u79c0"</span>;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;深夜的发现&quot;&gt;&lt;a href=&quot;#深夜的发现&quot; class=&quot;headerlink&quot; title=&quot;深夜的发现&quot;&gt;&lt;/a&gt;深夜的发现&lt;/h1&gt;&lt;p&gt;围观了大佬的公众号，想从github上面把代码下载下来&lt;del&gt;学习&lt;/del&gt;一下,但是遇到了要把一整个仓库的文件</summary>
+      
+    
+    
+    
+    
+    <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>update</title>
+    <link href="http://yoursite.com/2019/03/01/update/"/>
+    <id>http://yoursite.com/2019/03/01/update/</id>
+    <published>2019-03-01T12:38:21.000Z</published>
+    <updated>2019-05-08T10:28:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="注册了域名解析到博客网址上面"><a href="#注册了域名解析到博客网址上面" class="headerlink" title="注册了域名解析到博客网址上面"></a>注册了域名解析到博客网址上面</h1><p> 开学一周四节课正是很闲的时候<del>其实是闲得无聊又不想学习</del>，花时间把这个博客搭好了，感觉像学cadence和mul一样…熟能生巧吧。</p><blockquote><p>阿里云据说比腾讯云更安全一点，但是价格上感觉两家差不多。</p></blockquote><hr><p>另，找了一篇Markdown基本语法的介绍，如下：<br><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank">Markdown</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;注册了域名解析到博客网址上面&quot;&gt;&lt;a href=&quot;#注册了域名解析到博客网址上面&quot; class=&quot;headerlink&quot; title=&quot;注册了域名解析到博客网址上面&quot;&gt;&lt;/a&gt;注册了域名解析到博客网址上面&lt;/h1&gt;&lt;p&gt; 开学一周四节课正是很闲的时候&lt;del&gt;其实</summary>
+      
+    
+    
+    
+    <category term="HEXO搭建" scheme="http://yoursite.com/categories/HEXO搭建/"/>
+    
+    
+    <category term="daily" scheme="http://yoursite.com/tags/daily/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="_Silhouttes">
+
+
+
+    <meta name="description" content="从南到北 距离可以模糊时间">
+
+
+
+<title>VID | 模影零篇</title>
+
+
+
+    <link rel="icon" href="/su_loch.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+        
+    
+
+
+<link rel="alternate" href="/atom.xml" title="模影零篇" type="application/atom+xml">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">loch&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">loch&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">VID</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">_Silhouttes</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">三月 15, 2020&nbsp;&nbsp;20:53:26</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>reference paper：</p>
+<blockquote>
+<p>陈志欣. 基于深度学习的视频目标检测算法研究与应用[D].北方工业大学,2019.</p>
+</blockquote>
+<p><strong>视频目标检测（object detection from video）</strong></p>
+<p>从2015年开始，ILSVRC新增了VID挑战任务，视频中的目标检测难题：更多的帧图像文件、由于速度快导致运动模糊和光照等问题、物体间的遮挡问题。</p>
+<p><strong>数据集预处理</strong></p>
+<ol>
+<li>归一化：将原始像素压缩到[0,1]区间</li>
+</ol>
+<p>$$<br>\text { norm }=\frac{x_{i}-\min (x)}{\max (x)-\min (x)}<br>$$</p>
+<ol start="2">
+<li>去均值化：对每个通道，移除图像的平均亮度，凸显个体差异</li>
+</ol>
+<p>$$<br>x_{r}, x_{g}, x_{b}=\left(x_{r}-R_{m e a n}, x_{g}-G_{m e a n}, x_{b}-B_{m e a n}\right)<br>$$</p>
+<ol start="3">
+<li>标准化：使像素符合标准正态分布，在样本尺度不一致的情况下（如不同相机采集的图片，或者是来源不同的图片）</li>
+</ol>
+<p>$$<br>x^{\prime}=\frac{x-\mu}{\sigma}<br>$$</p>
+<a id="more"></a>
+<p><strong>数据增强</strong>：解决样本数量和质量不满足需求的问题</p>
+<p>镜像翻转、随机旋转、随机错切、高斯噪声、椒盐噪声、明亮度变化（不加入影响图像本质特性的噪声）</p>
+<p><strong>性能指标</strong></p>
+<p>mAP、IoU、FPS、NMS</p>
+<p><strong>可变形卷积</strong>（Deformable Convolution）-&gt; 了解卷积的多种方式</p>
+<p><img src="https://raw.githubusercontent.com/su-loch/pics/master/img/deformable%20convolution.png" alt></p>
+<p>refer to <a href="https://arxiv.org/pdf/1703.06211.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1703.06211.pdf</a></p>
+<p><strong>对小目标物体的检测</strong></p>
+<ul>
+<li><p>数据增强：用不同尺度的图片进行训练 × </p>
+</li>
+<li><p>SPP 空间池化金字塔 ×</p>
+</li>
+<li><p>SSD 在不同尺度的特征图上引入区域检测机制 （提高有限） ×</p>
+</li>
+<li><p><strong>FPN网络</strong></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/su-loch/pics/master/img/FPN.png" alt></p>
+<p>自下而上的前馈计算（池化采样），自下而上的特征融合与横向连接（最近邻上采样或双线性插值），横向对应的层特征图各像素点之间直接相加，融合后的特征还要进行3*3卷积以消除upsampling产生的混叠作用。</p>
+<p><strong>网络的训练损失函数</strong></p>
+<p>这一块真的看的我眼花…</p>
+<ol>
+<li>回归损失</li>
+</ol>
+<p>均方误差/平方损失/L2 损失：<br>$$<br>M S E=\frac{\sum_{i=1}^{n}\left(y_{i}-\hat{y}_{i}\right)^{2}}{n}<br>$$<br>平均绝对误差/L1 损失：</p>
+<p>$$<br>M A E=\frac{\sum_{i=1}^{n}\left|y_{i}-\hat{y}_{i}\right|}{n}<br>$$</p>
+<p>平均偏差误差（mean bias error）：</p>
+<p>$$<br>M B E=\frac{\sum_{i=1}^{n}\left(y_{i}-\hat{y}_{i}\right)}{n}<br>$$</p>
+<ol start="2">
+<li>分类损失</li>
+</ol>
+<p>Hinge Loss/多分类 SVM 损失：</p>
+<p>$$<br>S V M L o s s=\sum_{j \neq y_{i}} \max \left(0, s_{j}-s_{y_{i}}+1\right)<br>$$</p>
+<p>交叉熵损失/负对数似然：</p>
+<p>$$<br>CrossEntropyLoss = -\left( y_{i} \log \left( \hat{y} _ {i} \right) + \left( 1-y _ {i} \right) \log \left(1- \hat{y}_{i} \right) \right)<br>$$<br>剩余词条待补充：multi-task loss、facol loss、GIoU、DIoU</p>
+<p>refer to：<a href="https://zhuanlan.zhihu.com/p/112057799" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/112057799</a></p>
+<p><strong>YOLOv3中用k-means聚类得到anchor大小和数量设置</strong></p>
+<p><strong>VID流程</strong></p>
+<p>Image_Feature = N_feat(Image_input) -&gt; Output = N_det(Image_Feature)提取候选框进行分类回归</p>
+<p>Deap Feature Flow利用一种基于卷积操作的FlowNet生成前后帧的光流图，再叠加上前一时刻关键帧信息，生成本时刻关键帧最终的特征图。</p>
+<p>FGFA将相邻帧在时序上的特征聚合到当前帧的特征中，处理运动模糊、视频散焦、奇特姿势等问题。</p>
+<p><strong>稀疏特征传播方式提高检测速度</strong>   DFF</p>
+<p>每隔n张（n常取10）抽取一个关键帧得到特征图，非关键帧的特征图计算为最近邻关键帧以及其与当前非关键帧之间运动变化矢量的加和。通常用光流矢量定量计算临近两帧之间的信息差值。 -&gt; FlowNet如何实现</p>
+<p><strong>密集特征聚合方式提高检测精度</strong>   FGFA</p>
+<p>需要计算视频每一帧的特征图，对视频的第i个时刻的关键帧，给每个时间帧分配一定权重系数，来对前后i+2r个特征图对应位置的值加权求和。 -&gt; 权重如何分配</p>
+<p><strong>关键帧的选择优化</strong></p>
+<ul>
+<li>基于特征一致性的关键帧调度策略：</li>
+</ul>
+<p>$$<br>key = is_{-}key \left( B_{k \rightarrow i} \right)<br>$$</p>
+<p>$$<br>i s_{k e y}\left(Q_{k \rightarrow i}\right) = \left [ \frac{1}{N_{p}} \sum_{p} 1 \left ( B_{k \rightarrow i}(p) \leq \tau \right ) \right ] &gt; \gamma<br>$$<br>前后两个参数分别设置为0.1 和 0.2</p>
+<ul>
+<li><p>FlowNetSimple作为光流计算网络</p>
+</li>
+<li><p>设计Tubelet结构存放<strong>低检测关键帧</strong>前后r帧信息，做密特征聚合使用，优化此关键帧的检测精度。</p>
+</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>_Silhouttes</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://yoursite.com/2020/03/15/VID/">http://yoursite.com/2020/03/15/VID/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/cv/"># cv</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/03/17/Linux指令/">Linux指令</a>
+            
+            
+            <a class="next" rel="next" href="/2020/03/13/Anaconda使用tips/">Anaconda使用tips</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© _Silhouttes | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

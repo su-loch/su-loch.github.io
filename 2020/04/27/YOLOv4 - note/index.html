@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="_Silhouttes">
+
+
+
+    <meta name="description" content="从南到北 距离可以模糊时间">
+
+
+
+<title>YOLOv4 | 模影零篇</title>
+
+
+
+    <link rel="icon" href="/su_loch.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<link rel="alternate" href="/atom.xml" title="模影零篇" type="application/atom+xml">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">loch&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">loch&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">YOLOv4</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">_Silhouttes</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">四月 27, 2020&nbsp;&nbsp;16:03:05</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="YOLOv4-note"><a href="#YOLOv4-note" class="headerlink" title="YOLOv4 - note"></a>YOLOv4 - note</h1><blockquote>
+<p>arxiv.org/abs/2004.10934 -&gt; translation: <a href="https://tongtianta.site/paper/89863" target="_blank" rel="noopener">https://tongtianta.site/paper/89863</a></p>
+</blockquote>
+<p>提高accuracy的通用功能：加权残差链接（WRC）、跨阶段部分连接（CSP）、跨小批量标准化（CmBN）、自对抗训练（SAT）、Mish-activation。</p>
+<p>本文结合WRC、CSP、CmBN、SAT、Mish-activation、镶嵌数据增强（augmentation mosaic）、DropBlock regularization、CIoU loss</p>
+<p><img src="https://raw.githubusercontent.com/su-loch/pics/master/img/yolov4.png" alt></p>
+<h2 id="bags-of-freebies"><a href="#bags-of-freebies" class="headerlink" title="bags of freebies"></a>bags of freebies</h2><p>数据增强：</p>
+<ul>
+<li>photomatric distortion-&gt; 调整图像亮度，对比度，色相，饱和度和噪点</li>
+<li>geometric distortion -&gt; 随机缩放，裁剪，翻转和旋转</li>
+</ul>
+<p>模拟对象遮挡：</p>
+<ul>
+<li>random erase、CutOut -&gt; 随机选择图像中的矩形区域填充为0的随机或互补值</li>
+<li>hide-and-seek、grid mask -&gt; 随机或均匀地选择图像中的多个矩形区域替换为全0</li>
+</ul>
+<p>类似概念应用于feature map有：DropOut、DropConnect、<strong>DropBlock</strong></p>
+<p>DIoU考虑了对象中心的距离、CIoU同时考虑了重叠区域 -&gt; 更好的收敛速度和准确性</p>
+<h2 id="bags-of-specials"><a href="#bags-of-specials" class="headerlink" title="bags of specials"></a>bags of specials</h2><p>plugin modules：</p>
+<ul>
+<li>增强接收域：SPP、ASPP、RFB</li>
+<li>引入注意力机制（channel-wise、point-wise）：Squeeze-and-Excitation(SE)、Spatial Attention Module(<strong>SAM</strong>)</li>
+<li>集成特征：SFAM、ASFF、BiFPN</li>
+<li>激活函数：LReLU、<del>PReLU</del>、<del>ReLU6</del>、<del>SELU</del>、Swish、hard-Swish、Mish</li>
+</ul>
+<p>post-processing：DIoU NMS</p>
+<h2 id="架构选择"><a href="#架构选择" class="headerlink" title="架构选择"></a>架构选择</h2><p><strong>CSPDarknet53</strong>、CSPResNext50</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>_Silhouttes</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://yoursite.com/2020/04/27/YOLOv4 - note/">http://yoursite.com/2020/04/27/YOLOv4 - note/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/毕业设计/"># 毕业设计</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/08/16/bash notes/">bash</a>
+            
+            
+            <a class="next" rel="next" href="/2020/04/05/tf2-0/">tf2.0</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© _Silhouttes | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

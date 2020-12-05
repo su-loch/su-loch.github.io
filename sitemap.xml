@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/some_webs/COUNT_DOWN.html</loc>
+    
+    <lastmod>2020-12-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2020-12-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tag/index.html</loc>
+    
+    <lastmod>2020-12-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/category/index.html</loc>
+    
+    <lastmod>2020-12-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/08/16/bash%20notes/</loc>
+    
+    <lastmod>2020-08-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/27/YOLOv4%20-%20note/</loc>
+    
+    <lastmod>2020-04-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/05/tf2-0/</loc>
+    
+    <lastmod>2020-04-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/02/YOLOv3/</loc>
+    
+    <lastmod>2020-04-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/18/ResNet/</loc>
+    
+    <lastmod>2020-04-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/17/Linux%E6%8C%87%E4%BB%A4/</loc>
+    
+    <lastmod>2020-04-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/15/VID/</loc>
+    
+    <lastmod>2020-03-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/13/Anaconda%E4%BD%BF%E7%94%A8tips/</loc>
+    
+    <lastmod>2020-03-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/12/DL-tools/</loc>
+    
+    <lastmod>2020-03-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/06/CNN/</loc>
+    
+    <lastmod>2020-03-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/friends/index.html</loc>
+    
+    <lastmod>2020-01-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/07/06/latex2word/</loc>
+    
+    <lastmod>2019-08-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/07/11/TexLive-installation/</loc>
+    
+    <lastmod>2019-08-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/05/20/tensorflow-learning-2/</loc>
+    
+    <lastmod>2019-05-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/05/19/tensorflow-learning-1/</loc>
+    
+    <lastmod>2019-05-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/05/04/some-thoughts/</loc>
+    
+    <lastmod>2019-05-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/03/01/my-first-blog/</loc>
+    
+    <lastmod>2019-05-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/03/21/About-https/</loc>
+    
+    <lastmod>2019-05-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/03/30/import-pdb/</loc>
+    
+    <lastmod>2019-05-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/05/06/CDN-jsdelivr/</loc>
+    
+    <lastmod>2019-05-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/03/01/update/</loc>
+    
+    <lastmod>2019-05-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/03/15/a-tool/</loc>
+    
+    <lastmod>2019-05-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/404.html</loc>
+    
+    <lastmod>2019-04-06</lastmod>
+    
+  </url>
+  
+
+  <url>
+    <loc>http://yoursite.com/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>http://yoursite.com/tags/learning/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/hexo/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/python/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/CDN/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/Linux/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/NN/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/deeplearning/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/cv/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/LaTex/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/git/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/daily/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/linux/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/tensorflow/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>http://yoursite.com/categories/HEXO%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/Python%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>

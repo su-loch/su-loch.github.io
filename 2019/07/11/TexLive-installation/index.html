@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="_Silhouttes">
+
+
+
+    <meta name="description" content="从南到北 距离可以模糊时间">
+
+
+
+<title>TexLive_installation | 模影零篇</title>
+
+
+
+    <link rel="icon" href="/su_loch.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<link rel="alternate" href="/atom.xml" title="模影零篇" type="application/atom+xml">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">loch&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">loch&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">TexLive_installation</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">_Silhouttes</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">七月 11, 2019&nbsp;&nbsp;16:02:40</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="TexLive-VScode-搭建LaTex编译环境"><a href="#TexLive-VScode-搭建LaTex编译环境" class="headerlink" title="TexLive + VScode 搭建LaTex编译环境"></a>TexLive + VScode 搭建LaTex编译环境</h1><p>最近对LaTex十分感兴趣（因为好看），百度了很多教程，最后决定在VScode上配置环境。</p>
+<fancybox><br><br><img src="/img/texlive_test.png" alt><br><br></fancybox>
+
+<a id="more"></a>
+<ol>
+<li><p>下载<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">TexLive镜像文件</a>(清华大学镜像)，选择texlive2019.iso下载即可；</p>
+</li>
+<li><p>iso文件解压后，在文件夹中点击install-tl-advanced.bat或install-tl-windows.bat文件均可，其中可进行一些安装地址和组件的配置，安装时间较长；</p>
+</li>
+<li><p>在VScode中安装插件：LaTex language support, LaTex Workshop</p>
+</li>
+<li><p>对latex编译环境进行配置：在设置中搜索latex，对setting.json进行编辑，加入以下代码段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&quot;latex-workshop.latex.tools&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;-pdf&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;bibtex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;bibtex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;%DOCFILE%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;latex-workshop.latex.recipes&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;xelatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;pdflatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;latexmk&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex -&gt; bibtex -&gt; pdflatex*2&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;pdflatex&quot;,</span><br><span class="line">                &quot;bibtex&quot;,</span><br><span class="line">                &quot;pdflatex&quot;,</span><br><span class="line">                &quot;pdflatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;latex-workshop.view.pdf.viewer&quot;: &quot;tab&quot;,</span><br><span class="line">    &quot;latex-workshop.latex.clean.subfolder.enabled&quot;: true //这里要选择true清除编译过程中产生的文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建文件test.tex，Ctrl+S保存编译，得到PDF文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">    \title&#123;TexLive + VScode 环境配置&#125;</span><br><span class="line">    \author&#123;Silhouettes&#125;</span><br><span class="line">    \date&#123;\today&#125;</span><br><span class="line">    \begin&#123;document&#125;</span><br><span class="line">    \maketitle</span><br><span class="line">    This is the beginning of the article.\\</span><br><span class="line">    </span><br><span class="line">    编译成功！\\</span><br><span class="line"></span><br><span class="line">    $ &#123;f&#125;&apos;(0) =  \left. \frac&#123;df&#125;&#123;dx&#125; \right|_&#123;x=0&#125; $</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>这里要注意tex文件要按utf-8编码，如果编译后出现乱码，可以更换编码方式重新保存后再编译一次。</p>
+</li>
+</ol>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>_Silhouttes</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://yoursite.com/2019/07/11/TexLive-installation/">http://yoursite.com/2019/07/11/TexLive-installation/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/LaTex/"># LaTex</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/03/06/CNN/">CNN</a>
+            
+            
+            <a class="next" rel="next" href="/2019/07/06/latex2word/">latex2word</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© _Silhouttes | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
