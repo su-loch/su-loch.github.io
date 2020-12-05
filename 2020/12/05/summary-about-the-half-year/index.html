@@ -13,7 +13,7 @@
 
 
 
-<title>bash | sl&#39;s learning notes</title>
+<title>summary_about_the_half_year | sl&#39;s learning notes</title>
 
 
 
@@ -179,7 +179,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">bash</h1>
+            <h1 class="post-title">summary_about_the_half_year</h1>
             
                 <div class="post-meta">
                     
@@ -188,7 +188,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">八月 16, 2020&nbsp;&nbsp;0:00:00</a>
+                        Date: <a href="#">十二月 5, 2020&nbsp;&nbsp;21:40:35</a>
                         </span>
                     
                     
@@ -197,62 +197,11 @@
         </header>
 
         <div class="post-content">
-            <h1 id="bash-notes"><a href="#bash-notes" class="headerlink" title="bash notes"></a>bash notes</h1><blockquote>
-<p>reference: <a href="https://wangdoc.com/bash/" target="_blank" rel="noopener">https://wangdoc.com/bash/</a></p>
-</blockquote>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p><strong>pwd</strong> – 显示当前目录</p>
-<p><strong>echo</strong> 多行加“ ” 输出文本末尾有回车符</p>
-<ol>
-<li>-n参数 取消末尾的回车符</li>
-<li>-e参数 解释单双引号中的特殊字符(e.g. \n)</li>
-</ol>
-<p><strong>type</strong> 判断命令的来源</p>
-<ol>
-<li>-a参数 查看命令的所有定义</li>
-<li>-t参数 返回一个命令的类型：别名（alias），关键词（keyword），函数（function），内置命令（builtin）和文件（file）</li>
-</ol>
-<p>快捷键：</p>
-<ul>
-<li><code>Ctrl + L</code>：清除屏幕并将当前行移到页面顶部</li>
-<li><code>Ctrl + C</code>：中止当前正在执行的命令</li>
-<li><code>Shift + PageUp</code>：向上滚动</li>
-<li><code>Shift + PageDown</code>：向下滚动</li>
-<li><code>Ctrl + U</code>：从光标位置删除到行首</li>
-<li><code>Ctrl + K</code>：从光标位置删除到行尾</li>
-<li><code>Ctrl + D</code>：关闭 Shell 会话</li>
-<li><code>↑</code>，<code>↓</code>：浏览已执行命令的历史记录</li>
-</ul>
-<h2 id="模式扩展-gt-简单的正则"><a href="#模式扩展-gt-简单的正则" class="headerlink" title="模式扩展-&gt;简单的正则"></a>模式扩展-&gt;简单的正则</h2><blockquote>
-<p>shell接收命令，根据空格拆分为一个个词元，然后扩展词元里的特殊字符。</p>
-</blockquote>
-<p>set -f 开启        set +f 关闭</p>
-<ol>
-<li>波浪号 自动扩展成当前用户的主目录 ~+ equal to pwsd</li>
-<li>问号 代表文件路径中的任意单个字符，不包含空字符</li>
-<li>星号 代表文件路径中任意数量的任意字符，包括零个字符，但是不会匹配隐藏文件，如果需要匹配隐藏文件需要写成<code>.*</code></li>
-<li><code>[...]</code> 匹配方括号中的任意一个字符 <code>[!...] or [^...]</code>是非的表达 匹配连字符- 只能放在方括号内部首尾位置</li>
-<li><code>[start-end]</code> </li>
-<li><code>{...}</code> 扩展成大括号里的所有值，各个值之间用逗号分隔，逗号前后不能有空格</li>
-<li><code>{start..end}</code> 大括号扩展的简写形式，支持逆序 <code>{start..end..step}</code>中step为步长</li>
-<li>变量扩展 e.g. ${SHELL}</li>
-<li>子命令扩展 $(…) 可以扩展为另一个命令的运行结果</li>
-<li>算数扩展$((…))</li>
-<li>字符类</li>
-</ol>
-<ul>
-<li><code>[[:alnum:]]</code>：匹配任意英文字母与数字</li>
-<li><code>[[:alpha:]]</code>：匹配任意英文字母</li>
-<li><code>[[:blank:]]</code>：空格和 Tab 键</li>
-<li><code>[[:cntrl:]]</code>：ASCII 码 0-31 的不可打印字符</li>
-<li><code>[[:digit:]]</code>：匹配任意数字 0-9</li>
-<li><code>[[:graph:]]</code>：A-Z、a-z、0-9 和标点符号</li>
-<li><code>[[:lower:]]</code>：匹配任意小写字母 a-z</li>
-<li><code>[[:print:]]</code>：ASCII 码 32-127 的可打印字符</li>
-<li><code>[[:punct:]]</code>：标点符号（除了 A-Z、a-z、0-9 的可打印字符）</li>
-<li><code>[[:space:]]</code>：空格、Tab、LF（10）、VT（11）、FF（12）、CR（13）</li>
-<li><code>[[:upper:]]</code>：匹配任意大写字母 A-Z</li>
-<li><code>[[:xdigit:]]</code>：16进制字符（A-F、a-f、0-9）</li>
-</ul>
+            <h1 id="20201205-小记"><a href="#20201205-小记" class="headerlink" title="20201205-小记"></a>20201205-小记</h1><p>不知不觉研一开学有三个月了，自暑假之后再也没碰过blog，总觉得买域名的钱花的有点不值，换电脑后折腾了两个小时把原来的博客都搬到新电脑上面，换了个主题心情大好~。</p>
+<p>三个月其实也没有做什么东西，一直在上课和划水。</p>
+<p>RTS：李老师的课听得一脸懵…整个人都不太好，还好有万能的同学们一起讨论。也还好它结课了，整个人都轻松了hhh札记可太难了=_=</p>
+<p>近期的小目标是学会C++的基本使用和做项目，当然还有考试和作业。</p>
+<p>写的好水啊…没有任何干货（这篇后面会删掉吧hhh</p>
 
         </div>
 
@@ -267,7 +216,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2020/08/16/bash notes/">http://yoursite.com/2020/08/16/bash notes/</a></span>
+                        <span><a href="http://yoursite.com/2020/12/05/summary-about-the-half-year/">http://yoursite.com/2020/12/05/summary-about-the-half-year/</a></span>
                     </p>
                 
                 
@@ -291,7 +240,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/linux/"># linux</a>
+                        <a href="/tags/about-life/"># about_life</a>
                     
                         
                 </span>
@@ -304,10 +253,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2020/12/05/summary-about-the-half-year/">summary_about_the_half_year</a>
             
-            
-            <a class="next" rel="next" href="/2020/04/27/YOLOv4 - note/">YOLOv4</a>
+            <a class="next" rel="next" href="/2020/08/16/bash notes/">bash</a>
             
         </section>
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>模影零篇</title>
+  <title>sl&#39;s learning notes</title>
   
   
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-16T13:47:38.000Z</updated>
+  <updated>2020-12-05T13:55:33.974Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>summary_about_the_half_year</title>
+    <link href="http://yoursite.com/2020/12/05/summary-about-the-half-year/"/>
+    <id>http://yoursite.com/2020/12/05/summary-about-the-half-year/</id>
+    <published>2020-12-05T13:40:35.000Z</published>
+    <updated>2020-12-05T13:55:33.974Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="20201205-小记"><a href="#20201205-小记" class="headerlink" title="20201205-小记"></a>20201205-小记</h1><p>不知不觉研一开学有三个月了，自暑假之后再也没碰过blog，总觉得买域名的钱花的有点不值，换电脑后折腾了两个小时把原来的博客都搬到新电脑上面，换了个主题心情大好~。</p><p>三个月其实也没有做什么东西，一直在上课和划水。</p><p>RTS：李老师的课听得一脸懵…整个人都不太好，还好有万能的同学们一起讨论。也还好它结课了，整个人都轻松了hhh札记可太难了=_=</p><p>近期的小目标是学会C++的基本使用和做项目，当然还有考试和作业。</p><p>写的好水啊…没有任何干货（这篇后面会删掉吧hhh</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;20201205-小记&quot;&gt;&lt;a href=&quot;#20201205-小记&quot; class=&quot;headerlink&quot; title=&quot;20201205-小记&quot;&gt;&lt;/a&gt;20201205-小记&lt;/h1&gt;&lt;p&gt;不知不觉研一开学有三个月了，自暑假之后再也没碰过blog，总觉得买域</summary>
+      
+    
+    
+    
+    
+    <category term="about_life" scheme="http://yoursite.com/tags/about-life/"/>
+    
+  </entry>
   
   <entry>
     <title>bash</title>
@@ -475,30 +497,6 @@
     
     
     <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>update</title>
-    <link href="http://yoursite.com/2019/03/01/update/"/>
-    <id>http://yoursite.com/2019/03/01/update/</id>
-    <published>2019-03-01T12:38:21.000Z</published>
-    <updated>2019-05-08T10:28:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="注册了域名解析到博客网址上面"><a href="#注册了域名解析到博客网址上面" class="headerlink" title="注册了域名解析到博客网址上面"></a>注册了域名解析到博客网址上面</h1><p> 开学一周四节课正是很闲的时候<del>其实是闲得无聊又不想学习</del>，花时间把这个博客搭好了，感觉像学cadence和mul一样…熟能生巧吧。</p><blockquote><p>阿里云据说比腾讯云更安全一点，但是价格上感觉两家差不多。</p></blockquote><hr><p>另，找了一篇Markdown基本语法的介绍，如下：<br><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank">Markdown</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;注册了域名解析到博客网址上面&quot;&gt;&lt;a href=&quot;#注册了域名解析到博客网址上面&quot; class=&quot;headerlink&quot; title=&quot;注册了域名解析到博客网址上面&quot;&gt;&lt;/a&gt;注册了域名解析到博客网址上面&lt;/h1&gt;&lt;p&gt; 开学一周四节课正是很闲的时候&lt;del&gt;其实</summary>
-      
-    
-    
-    
-    <category term="HEXO搭建" scheme="http://yoursite.com/categories/HEXO搭建/"/>
-    
-    
-    <category term="daily" scheme="http://yoursite.com/tags/daily/"/>
     
   </entry>
   

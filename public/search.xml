@@ -53,6 +53,46 @@
       </tags>
   </entry>
   <entry>
+    <title>CNN</title>
+    <url>/2020/03/06/CNN/</url>
+    <content><![CDATA[<h1 id="Convolutional-Neural-Network"><a href="#Convolutional-Neural-Network" class="headerlink" title="Convolutional Neural Network"></a>Convolutional Neural Network</h1><h2 id="1-输入层"><a href="#1-输入层" class="headerlink" title="1. 输入层"></a>1. 输入层</h2><p>原始图片，在计算机内用构成像素点的多维矩阵来表示。</p>
+<h2 id="2-隐层"><a href="#2-隐层" class="headerlink" title="2. 隐层"></a>2. 隐层</h2><p>convolution卷积：过滤特征</p>
+<p>ReLU线性修正单元：激活函数</p>
+<p>polling池化：降低维度并提高模型的容错性</p>
+<p><strong>降低模型的参数数目</strong></p>
+<ol>
+<li><p>局部感知野：每个神经元只需要对局部图像进行感知，然后在更高层将局部的信息综合起来得到全局的信息；</p>
+</li>
+<li><p>权值共享：对于每一层来讲，所有神经元对应的权值参数是一样的，同一层下的神经元连接参数只与特征提取的方式有关，而与具体的位置无关。</p>
+</li>
+</ol>
+<p>第一层隐层一般是用来做边缘和曲线检测</p>
+<p>第二层隐层对第一层学到的边缘曲线组合得到的一些特征</p>
+<p>第三层则会学到一些更复杂的特征</p>
+<p><strong>ReLU激活函数</strong></p>
+<p>引入非线性激励函数，深层网络具有意义（不再是输入的线性组合，可以逼近任意函数）</p>
+<p>为什么采用ReLU函数：1. 采用sigmoid等函数，计算量大，反向传播求误差梯度时涉及除法；2. 对于深层网络，sigmoid函数反向传播时，容易出现梯度消失的情况（sigmoid接近饱和区时，变换太缓慢，导数趋于0，容易造成信息丢失），从而无法完成深层网络的训练；3. ReLU会使一部分神经元的输出为0，造成了网络的稀疏性，并减少了参数的相互依存关系，缓解了过拟合问题的发生。</p>
+<p><strong>pooling池化（欠采样）</strong></p>
+<p>主要有max、average、sum等不同类型的操作</p>
+<h2 id="3-输出层"><a href="#3-输出层" class="headerlink" title="3. 输出层"></a>3. 输出层</h2><p>经过若干次的卷积+线性修真+pooling，模型会将学到的高水平特征接到一个<strong>全连接层</strong>，通过softmax函数得到输出。 </p>
+]]></content>
+      <tags>
+        <tag>NN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux指令</title>
+    <url>/2020/03/17/Linux%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<p><a href="https://www.jianshu.com/nb/37698552" target="_blank" rel="noopener">https://www.jianshu.com/nb/37698552</a></p>
+<p><a href="https://www.jianshu.com/p/8c2af151ddc2" target="_blank" rel="noopener">https://www.jianshu.com/p/8c2af151ddc2</a></p>
+<p><a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-shell.html</a></p>
+<p><a href="https://www.linuxcool.com/" target="_blank" rel="noopener">linux命令大全</a></p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CDN_jsdelivr</title>
     <url>/2019/05/06/CDN-jsdelivr/</url>
     <content><![CDATA[<h1 id="blog引用资源路径由本地替换为CDN"><a href="#blog引用资源路径由本地替换为CDN" class="headerlink" title="blog引用资源路径由本地替换为CDN"></a>blog引用资源路径由本地替换为CDN</h1><blockquote>
@@ -92,43 +132,30 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux指令</title>
-    <url>/2020/03/17/Linux%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<p><a href="https://www.jianshu.com/nb/37698552" target="_blank" rel="noopener">https://www.jianshu.com/nb/37698552</a></p>
-<p><a href="https://www.jianshu.com/p/8c2af151ddc2" target="_blank" rel="noopener">https://www.jianshu.com/p/8c2af151ddc2</a></p>
-<p><a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-shell.html</a></p>
-<p><a href="https://www.linuxcool.com/" target="_blank" rel="noopener">linux命令大全</a></p>
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CNN</title>
-    <url>/2020/03/06/CNN/</url>
-    <content><![CDATA[<h1 id="Convolutional-Neural-Network"><a href="#Convolutional-Neural-Network" class="headerlink" title="Convolutional Neural Network"></a>Convolutional Neural Network</h1><h2 id="1-输入层"><a href="#1-输入层" class="headerlink" title="1. 输入层"></a>1. 输入层</h2><p>原始图片，在计算机内用构成像素点的多维矩阵来表示。</p>
-<h2 id="2-隐层"><a href="#2-隐层" class="headerlink" title="2. 隐层"></a>2. 隐层</h2><p>convolution卷积：过滤特征</p>
-<p>ReLU线性修正单元：激活函数</p>
-<p>polling池化：降低维度并提高模型的容错性</p>
-<p><strong>降低模型的参数数目</strong></p>
+    <title>TexLive_installation</title>
+    <url>/2019/07/11/TexLive-installation/</url>
+    <content><![CDATA[<h1 id="TexLive-VScode-搭建LaTex编译环境"><a href="#TexLive-VScode-搭建LaTex编译环境" class="headerlink" title="TexLive + VScode 搭建LaTex编译环境"></a>TexLive + VScode 搭建LaTex编译环境</h1><p>最近对LaTex十分感兴趣（因为好看），百度了很多教程，最后决定在VScode上配置环境。</p>
+<fancybox><br><br><img src="/img/texlive_test.png" alt><br><br></fancybox>
+
+<a id="more"></a>
 <ol>
-<li><p>局部感知野：每个神经元只需要对局部图像进行感知，然后在更高层将局部的信息综合起来得到全局的信息；</p>
+<li><p>下载<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">TexLive镜像文件</a>(清华大学镜像)，选择texlive2019.iso下载即可；</p>
 </li>
-<li><p>权值共享：对于每一层来讲，所有神经元对应的权值参数是一样的，同一层下的神经元连接参数只与特征提取的方式有关，而与具体的位置无关。</p>
+<li><p>iso文件解压后，在文件夹中点击install-tl-advanced.bat或install-tl-windows.bat文件均可，其中可进行一些安装地址和组件的配置，安装时间较长；</p>
+</li>
+<li><p>在VScode中安装插件：LaTex language support, LaTex Workshop</p>
+</li>
+<li><p>对latex编译环境进行配置：在设置中搜索latex，对setting.json进行编辑，加入以下代码段：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;latex-workshop.latex.tools&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;-pdf&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;bibtex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;bibtex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;%DOCFILE%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;latex-workshop.latex.recipes&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;xelatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;pdflatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;latexmk&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex -&gt; bibtex -&gt; pdflatex*2&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;pdflatex&quot;,</span><br><span class="line">                &quot;bibtex&quot;,</span><br><span class="line">                &quot;pdflatex&quot;,</span><br><span class="line">                &quot;pdflatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;latex-workshop.view.pdf.viewer&quot;: &quot;tab&quot;,</span><br><span class="line">    &quot;latex-workshop.latex.clean.subfolder.enabled&quot;: true //这里要选择true清除编译过程中产生的文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建文件test.tex，Ctrl+S保存编译，得到PDF文件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">    \title&#123;TexLive + VScode 环境配置&#125;</span><br><span class="line">    \author&#123;Silhouettes&#125;</span><br><span class="line">    \date&#123;\today&#125;</span><br><span class="line">    \begin&#123;document&#125;</span><br><span class="line">    \maketitle</span><br><span class="line">    This is the beginning of the article.\\</span><br><span class="line">    </span><br><span class="line">    编译成功！\\</span><br><span class="line"></span><br><span class="line">    $ &#123;f&#125;&apos;(0) =  \left. \frac&#123;df&#125;&#123;dx&#125; \right|_&#123;x=0&#125; $</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>这里要注意tex文件要按utf-8编码，如果编译后出现乱码，可以更换编码方式重新保存后再编译一次。</p>
 </li>
 </ol>
-<p>第一层隐层一般是用来做边缘和曲线检测</p>
-<p>第二层隐层对第一层学到的边缘曲线组合得到的一些特征</p>
-<p>第三层则会学到一些更复杂的特征</p>
-<p><strong>ReLU激活函数</strong></p>
-<p>引入非线性激励函数，深层网络具有意义（不再是输入的线性组合，可以逼近任意函数）</p>
-<p>为什么采用ReLU函数：1. 采用sigmoid等函数，计算量大，反向传播求误差梯度时涉及除法；2. 对于深层网络，sigmoid函数反向传播时，容易出现梯度消失的情况（sigmoid接近饱和区时，变换太缓慢，导数趋于0，容易造成信息丢失），从而无法完成深层网络的训练；3. ReLU会使一部分神经元的输出为0，造成了网络的稀疏性，并减少了参数的相互依存关系，缓解了过拟合问题的发生。</p>
-<p><strong>pooling池化（欠采样）</strong></p>
-<p>主要有max、average、sum等不同类型的操作</p>
-<h2 id="3-输出层"><a href="#3-输出层" class="headerlink" title="3. 输出层"></a>3. 输出层</h2><p>经过若干次的卷积+线性修真+pooling，模型会将学到的高水平特征接到一个<strong>全连接层</strong>，通过softmax函数得到输出。 </p>
 ]]></content>
       <tags>
-        <tag>NN</tag>
+        <tag>LaTex</tag>
       </tags>
   </entry>
   <entry>
@@ -157,6 +184,41 @@
 </ul>
 <h3 id="backbone"><a href="#backbone" class="headerlink" title="backbone"></a>backbone</h3><p>Darknet-53没有设置池化层和全连接层，而通过改变卷积核的步长进行张量的尺寸变换，在yolov3中没有最后的全局平均池化层，所以张量变化只考虑5层。</p>
 <h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><p>y1、y2、y3深度都是255 = 3*（5+80），其中5是bbox的5个参数，80是COCO数据集的类别数。</p>
+]]></content>
+      <tags>
+        <tag>毕业设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>YOLOv4</title>
+    <url>/2020/04/27/YOLOv4%20-%20note/</url>
+    <content><![CDATA[<h1 id="YOLOv4-note"><a href="#YOLOv4-note" class="headerlink" title="YOLOv4 - note"></a>YOLOv4 - note</h1><blockquote>
+<p>arxiv.org/abs/2004.10934 -&gt; translation: <a href="https://tongtianta.site/paper/89863" target="_blank" rel="noopener">https://tongtianta.site/paper/89863</a></p>
+</blockquote>
+<p>提高accuracy的通用功能：加权残差链接（WRC）、跨阶段部分连接（CSP）、跨小批量标准化（CmBN）、自对抗训练（SAT）、Mish-activation。</p>
+<p>本文结合WRC、CSP、CmBN、SAT、Mish-activation、镶嵌数据增强（augmentation mosaic）、DropBlock regularization、CIoU loss</p>
+<p><img src="https://raw.githubusercontent.com/su-loch/pics/master/img/yolov4.png" alt></p>
+<h2 id="bags-of-freebies"><a href="#bags-of-freebies" class="headerlink" title="bags of freebies"></a>bags of freebies</h2><p>数据增强：</p>
+<ul>
+<li>photomatric distortion-&gt; 调整图像亮度，对比度，色相，饱和度和噪点</li>
+<li>geometric distortion -&gt; 随机缩放，裁剪，翻转和旋转</li>
+</ul>
+<p>模拟对象遮挡：</p>
+<ul>
+<li>random erase、CutOut -&gt; 随机选择图像中的矩形区域填充为0的随机或互补值</li>
+<li>hide-and-seek、grid mask -&gt; 随机或均匀地选择图像中的多个矩形区域替换为全0</li>
+</ul>
+<p>类似概念应用于feature map有：DropOut、DropConnect、<strong>DropBlock</strong></p>
+<p>DIoU考虑了对象中心的距离、CIoU同时考虑了重叠区域 -&gt; 更好的收敛速度和准确性</p>
+<h2 id="bags-of-specials"><a href="#bags-of-specials" class="headerlink" title="bags of specials"></a>bags of specials</h2><p>plugin modules：</p>
+<ul>
+<li>增强接收域：SPP、ASPP、RFB</li>
+<li>引入注意力机制（channel-wise、point-wise）：Squeeze-and-Excitation(SE)、Spatial Attention Module(<strong>SAM</strong>)</li>
+<li>集成特征：SFAM、ASFF、BiFPN</li>
+<li>激活函数：LReLU、<del>PReLU</del>、<del>ReLU6</del>、<del>SELU</del>、Swish、hard-Swish、Mish</li>
+</ul>
+<p>post-processing：DIoU NMS</p>
+<h2 id="架构选择"><a href="#架构选择" class="headerlink" title="架构选择"></a>架构选择</h2><p><strong>CSPDarknet53</strong>、CSPResNext50</p>
 ]]></content>
       <tags>
         <tag>毕业设计</tag>
@@ -249,74 +311,69 @@
       </tags>
   </entry>
   <entry>
-    <title>TexLive_installation</title>
-    <url>/2019/07/11/TexLive-installation/</url>
-    <content><![CDATA[<h1 id="TexLive-VScode-搭建LaTex编译环境"><a href="#TexLive-VScode-搭建LaTex编译环境" class="headerlink" title="TexLive + VScode 搭建LaTex编译环境"></a>TexLive + VScode 搭建LaTex编译环境</h1><p>最近对LaTex十分感兴趣（因为好看），百度了很多教程，最后决定在VScode上配置环境。</p>
-<fancybox><br><br><img src="/img/texlive_test.png" alt><br><br></fancybox>
-
+    <title>import_pdb</title>
+    <url>/2019/03/30/import-pdb/</url>
+    <content><![CDATA[<h1 id="pdb-–-the-python-debugger"><a href="#pdb-–-the-python-debugger" class="headerlink" title="pdb – the python debugger"></a>pdb – the python debugger</h1><p>最近在python学习中用到了pdb调试模块（在没有IDE的情况下debug应该特别好用）,做一点笔记：</p>
+<p>首先, import pdb, 在需要调试的地方设置断点 pdb.set_trace(), 执行程序进入断点。</p>
 <a id="more"></a>
-<ol>
-<li><p>下载<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">TexLive镜像文件</a>(清华大学镜像)，选择texlive2019.iso下载即可；</p>
-</li>
-<li><p>iso文件解压后，在文件夹中点击install-tl-advanced.bat或install-tl-windows.bat文件均可，其中可进行一些安装地址和组件的配置，安装时间较长；</p>
-</li>
-<li><p>在VScode中安装插件：LaTex language support, LaTex Workshop</p>
-</li>
-<li><p>对latex编译环境进行配置：在设置中搜索latex，对setting.json进行编辑，加入以下代码段：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;latex-workshop.latex.tools&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;-pdf&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;-synctex=1&quot;,</span><br><span class="line">                &quot;-interaction=nonstopmode&quot;,</span><br><span class="line">                &quot;-file-line-error&quot;,</span><br><span class="line">                &quot;%DOC%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;bibtex&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;bibtex&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;%DOCFILE%&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;latex-workshop.latex.recipes&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;xelatex&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;xelatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;pdflatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;latexmk&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;latexmk&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;pdflatex -&gt; bibtex -&gt; pdflatex*2&quot;,</span><br><span class="line">            &quot;tools&quot;: [</span><br><span class="line">                &quot;pdflatex&quot;,</span><br><span class="line">                &quot;bibtex&quot;,</span><br><span class="line">                &quot;pdflatex&quot;,</span><br><span class="line">                &quot;pdflatex&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;latex-workshop.view.pdf.viewer&quot;: &quot;tab&quot;,</span><br><span class="line">    &quot;latex-workshop.latex.clean.subfolder.enabled&quot;: true //这里要选择true清除编译过程中产生的文件</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建文件test.tex，Ctrl+S保存编译，得到PDF文件。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">    \title&#123;TexLive + VScode 环境配置&#125;</span><br><span class="line">    \author&#123;Silhouettes&#125;</span><br><span class="line">    \date&#123;\today&#125;</span><br><span class="line">    \begin&#123;document&#125;</span><br><span class="line">    \maketitle</span><br><span class="line">    This is the beginning of the article.\\</span><br><span class="line">    </span><br><span class="line">    编译成功！\\</span><br><span class="line"></span><br><span class="line">    $ &#123;f&#125;&apos;(0) =  \left. \frac&#123;df&#125;&#123;dx&#125; \right|_&#123;x=0&#125; $</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p>这里要注意tex文件要按utf-8编码，如果编译后出现乱码，可以更换编码方式重新保存后再编译一次。</p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>LaTex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>a_tool</title>
-    <url>/2019/03/15/a-tool/</url>
-    <content><![CDATA[<h1 id="深夜的发现"><a href="#深夜的发现" class="headerlink" title="深夜的发现"></a>深夜的发现</h1><p>围观了大佬的公众号，想从github上面把代码下载下来<del>学习</del>一下,但是遇到了要把一整个仓库的文件都clone下来的问题…于是百度了下载指定文件夹下文件的做法，发现最简单的方法是把链接直接复制在Downgit网站上(这里附上MinhasKamal/DownGit的网址: <a href="https://minhaskamal.github.io/DownGit/" target="_blank">DownGit</a>)，下载即可。但是又遇到了网站加载不出来的问题，最后发现了另一个大佬移植的网站，尽管这个网址的资源加载也有问题，但是总的来说还可以用，就是等待时间可能会比较长，给人的感觉是这个网站也不能用(<del>嗯？？我折腾了这么久还是不能用？？</del>)，看样子已经是很久没有人维护了…网址如下: <a href="http://downgit.zhoudaxiaa.com/#/home" target="_blank">周大侠啊DownGit</a><br>安了pygame模块就可以愉快地玩游戏啦~<br>另，最近觉得很有意思的表情包上面的梗，以及附上新的md语法介绍：<a href="https://coding.net/help/doc/project/markdown.html" target="_blank" rel="noopener">MarkDown基本语法</a><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String s=<span class="string">"\u4f18\u79c0"</span>;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>YOLOv4</title>
-    <url>/2020/04/27/YOLOv4%20-%20note/</url>
-    <content><![CDATA[<h1 id="YOLOv4-note"><a href="#YOLOv4-note" class="headerlink" title="YOLOv4 - note"></a>YOLOv4 - note</h1><blockquote>
-<p>arxiv.org/abs/2004.10934 -&gt; translation: <a href="https://tongtianta.site/paper/89863" target="_blank" rel="noopener">https://tongtianta.site/paper/89863</a></p>
+<p>常用命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>   next(n)</td>
+<td>执行下一行</td>
+</tr>
+<tr>
+<td>   exit(q)</td>
+<td>中止调试并退出</td>
+</tr>
+<tr>
+<td>   continue(c)</td>
+<td>停止debug继续执行程序</td>
+</tr>
+<tr>
+<td>   where(w)</td>
+<td>找出当前代码的运行位置</td>
+</tr>
+<tr>
+<td>   list(l)</td>
+<td>显示当前行的代码段</td>
+</tr>
+<tr>
+<td>   print(p)</td>
+<td>打印变量的值</td>
+</tr>
+<tr>
+<td>   step(s)</td>
+<td>进入函数</td>
+</tr>
+<tr>
+<td>   return(r)</td>
+<td>执行代码直到当前函数返回(return)</td>
+</tr>
+<tr>
+<td>   help</td>
+<td>帮助</td>
+</tr>
+</tbody>
+</table>
+<p>参考<br><a href="https://docs.python.org/zh-cn/3.7/library/pdb.html" target="_blank" rel="noopener">python pdb模块 官方文档</a> 版本：3.7</p>
+<blockquote>
+<p>The module pdb defines an interactive source code debugger for Python programs. It supports setting (conditional) breakpoints and single stepping at the source line level, inspection of stack frames, source code listing, and evaluation of arbitrary Python code in the context of any stack frame. It also supports post-mortem debugging and can be called under program control.</p>
 </blockquote>
-<p>提高accuracy的通用功能：加权残差链接（WRC）、跨阶段部分连接（CSP）、跨小批量标准化（CmBN）、自对抗训练（SAT）、Mish-activation。</p>
-<p>本文结合WRC、CSP、CmBN、SAT、Mish-activation、镶嵌数据增强（augmentation mosaic）、DropBlock regularization、CIoU loss</p>
-<p><img src="https://raw.githubusercontent.com/su-loch/pics/master/img/yolov4.png" alt></p>
-<h2 id="bags-of-freebies"><a href="#bags-of-freebies" class="headerlink" title="bags of freebies"></a>bags of freebies</h2><p>数据增强：</p>
-<ul>
-<li>photomatric distortion-&gt; 调整图像亮度，对比度，色相，饱和度和噪点</li>
-<li>geometric distortion -&gt; 随机缩放，裁剪，翻转和旋转</li>
-</ul>
-<p>模拟对象遮挡：</p>
-<ul>
-<li>random erase、CutOut -&gt; 随机选择图像中的矩形区域填充为0的随机或互补值</li>
-<li>hide-and-seek、grid mask -&gt; 随机或均匀地选择图像中的多个矩形区域替换为全0</li>
-</ul>
-<p>类似概念应用于feature map有：DropOut、DropConnect、<strong>DropBlock</strong></p>
-<p>DIoU考虑了对象中心的距离、CIoU同时考虑了重叠区域 -&gt; 更好的收敛速度和准确性</p>
-<h2 id="bags-of-specials"><a href="#bags-of-specials" class="headerlink" title="bags of specials"></a>bags of specials</h2><p>plugin modules：</p>
-<ul>
-<li>增强接收域：SPP、ASPP、RFB</li>
-<li>引入注意力机制（channel-wise、point-wise）：Squeeze-and-Excitation(SE)、Spatial Attention Module(<strong>SAM</strong>)</li>
-<li>集成特征：SFAM、ASFF、BiFPN</li>
-<li>激活函数：LReLU、<del>PReLU</del>、<del>ReLU6</del>、<del>SELU</del>、Swish、hard-Swish、Mish</li>
-</ul>
-<p>post-processing：DIoU NMS</p>
-<h2 id="架构选择"><a href="#架构选择" class="headerlink" title="架构选择"></a>架构选择</h2><p><strong>CSPDarknet53</strong>、CSPResNext50</p>
 ]]></content>
+      <categories>
+        <category>Python学习</category>
+      </categories>
       <tags>
-        <tag>毕业设计</tag>
+        <tag>learning</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -335,6 +392,15 @@
 ]]></content>
       <tags>
         <tag>daily</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>a_tool</title>
+    <url>/2019/03/15/a-tool/</url>
+    <content><![CDATA[<h1 id="深夜的发现"><a href="#深夜的发现" class="headerlink" title="深夜的发现"></a>深夜的发现</h1><p>围观了大佬的公众号，想从github上面把代码下载下来<del>学习</del>一下,但是遇到了要把一整个仓库的文件都clone下来的问题…于是百度了下载指定文件夹下文件的做法，发现最简单的方法是把链接直接复制在Downgit网站上(这里附上MinhasKamal/DownGit的网址: <a href="https://minhaskamal.github.io/DownGit/" target="_blank">DownGit</a>)，下载即可。但是又遇到了网站加载不出来的问题，最后发现了另一个大佬移植的网站，尽管这个网址的资源加载也有问题，但是总的来说还可以用，就是等待时间可能会比较长，给人的感觉是这个网站也不能用(<del>嗯？？我折腾了这么久还是不能用？？</del>)，看样子已经是很久没有人维护了…网址如下: <a href="http://downgit.zhoudaxiaa.com/#/home" target="_blank">周大侠啊DownGit</a><br>安了pygame模块就可以愉快地玩游戏啦~<br>另，最近觉得很有意思的表情包上面的梗，以及附上新的md语法介绍：<a href="https://coding.net/help/doc/project/markdown.html" target="_blank" rel="noopener">MarkDown基本语法</a><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String s=<span class="string">"\u4f18\u79c0"</span>;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -421,30 +487,9 @@
       </tags>
   </entry>
   <entry>
-    <title>tensorflow_learning_2</title>
-    <url>/2019/05/20/tensorflow-learning-2/</url>
-    <content><![CDATA[<h1 id="tensorflow学习笔记-2"><a href="#tensorflow学习笔记-2" class="headerlink" title="tensorflow学习笔记_2"></a>tensorflow学习笔记_2</h1><h2 id="计算图与张量"><a href="#计算图与张量" class="headerlink" title="计算图与张量"></a>计算图与张量</h2><p>TensorFlow中的计算可以表示为一个有向图（<strong>计算图</strong>），其中每一个运算操作作为一个节点，节点与节点的连接称为边，一张计算图描述了数据的计算流程，我们可以对计算图上的各个分支进行改变来达到我们的运算目的。在计算图的边中流动的数据被称为<strong>张量</strong>（tensor），张量的数据类型可以事先定义，也可以通过计算图的结构推导得出。</p>
-<p>一个运算操作代表了一类抽象运算（如矩阵乘法或向量加法），运算操作必须有自己的属性，但是所有属性都必须被预先设置，或者在计算图沿着边运行时可以被推断出来。</p>
-<h2 id="会话-Session"><a href="#会话-Session" class="headerlink" title="会话 Session"></a>会话 Session</h2><p>session是用户使用tensorflow的互交式接口，用户可以通过session的Extend方法添加新的节点和边来创建计算图，然后通过session的Run方法执行计算图。</p>
-<p>大多数运算中，tensor不会一直保留下去。而Variable是一类特殊的运算操作，可以将一些需要保留的tensor储存在内存或者显存当中。每执行一次计算图后，Variable中的tensor都会被保存，同时在计算过程中，tensor的值也可以被更新。</p>
-<hr>
-<p>csdn上还是有很多的教程   <a href="https://www.cnblogs.com/hypnus-ly/p/8040951.html" target="_blank" rel="noopener">概念理解</a></p>
-<h2 id="MNIST手写数字识别"><a href="#MNIST手写数字识别" class="headerlink" title="MNIST手写数字识别"></a>MNIST手写数字识别</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">mnist = input_data.read_data_sets(<span class="string">"MNIST_data/"</span>, one_hot=<span class="literal">True</span>)</span><br><span class="line">print(mnist.train.images.shape,mnist.train.labels.shape)</span><br><span class="line">print(mnist.test.images.shape,mnist.test.labels.shape)</span><br><span class="line">print(mnist.validation.images.shape,mnist.validation.labels.shape)</span><br></pre></td></tr></table></figure>
-<p>结果输出为</p>
-<p>(55000, 784) (55000, 10)<br>(10000, 784) (10000, 10)<br>(5000, 784) (5000, 10)</p>
-<p><a href="https://github.com/yhlleo/mnist" target="_blank" rel="noopener">一个例程</a> 存</p>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>tensorflow</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>my_first_blog</title>
     <url>/2019/03/01/my-first-blog/</url>
-    <content><![CDATA[<h1 id="写在开头"><a href="#写在开头" class="headerlink" title="写在开头"></a>写在开头</h1><p>  花了半个下午的时间弥补了上个学期搞不定hexo的遗憾，现在依旧不太清楚node出了什么问题npm的时候总是报错(WARN，不过总算是能发布到gayhub上面了/滑稽。没有注册域名就打算暂时先放在github上面吧。</p>
+    <content><![CDATA[<h1 id="写在开头"><a href="#写在开头" class="headerlink" title="写在开头"></a>写在开头</h1><p>  花了半个下午的时间弥补了上个学期搞不定hexo的遗憾，现在依旧不太清楚node出了什么问题npm的时候总是报错(WARN，不过总算是能发布到github上面了。暂时没有注册域名的打算。</p>
 <a id="more"></a>
 <p>看了很多blog觉得这篇很有用：<a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">hexo + github搭建个人blog</a></p>
 ]]></content>
@@ -456,69 +501,16 @@
       </tags>
   </entry>
   <entry>
-    <title>import_pdb</title>
-    <url>/2019/03/30/import-pdb/</url>
-    <content><![CDATA[<h1 id="pdb-–-the-python-debugger"><a href="#pdb-–-the-python-debugger" class="headerlink" title="pdb – the python debugger"></a>pdb – the python debugger</h1><p>最近在python学习中用到了pdb调试模块（在没有IDE的情况下debug应该特别好用）,做一点笔记：</p>
-<p>首先, import pdb, 在需要调试的地方设置断点 pdb.set_trace(), 执行程序进入断点。</p>
-<a id="more"></a>
-<p>常用命令</p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>   next(n)</td>
-<td>执行下一行</td>
-</tr>
-<tr>
-<td>   exit(q)</td>
-<td>中止调试并退出</td>
-</tr>
-<tr>
-<td>   continue(c)</td>
-<td>停止debug继续执行程序</td>
-</tr>
-<tr>
-<td>   where(w)</td>
-<td>找出当前代码的运行位置</td>
-</tr>
-<tr>
-<td>   list(l)</td>
-<td>显示当前行的代码段</td>
-</tr>
-<tr>
-<td>   print(p)</td>
-<td>打印变量的值</td>
-</tr>
-<tr>
-<td>   step(s)</td>
-<td>进入函数</td>
-</tr>
-<tr>
-<td>   return(r)</td>
-<td>执行代码直到当前函数返回(return)</td>
-</tr>
-<tr>
-<td>   help</td>
-<td>帮助</td>
-</tr>
-</tbody>
-</table>
-<p>参考<br><a href="https://docs.python.org/zh-cn/3.7/library/pdb.html" target="_blank" rel="noopener">python pdb模块 官方文档</a> 版本：3.7</p>
-<blockquote>
-<p>The module pdb defines an interactive source code debugger for Python programs. It supports setting (conditional) breakpoints and single stepping at the source line level, inspection of stack frames, source code listing, and evaluation of arbitrary Python code in the context of any stack frame. It also supports post-mortem debugging and can be called under program control.</p>
-</blockquote>
+    <title>summary_about_the_half_year</title>
+    <url>/2020/12/05/summary-about-the-half-year/</url>
+    <content><![CDATA[<h1 id="20201205-小记"><a href="#20201205-小记" class="headerlink" title="20201205-小记"></a>20201205-小记</h1><p>不知不觉研一开学有三个月了，自暑假之后再也没碰过blog，总觉得买域名的钱花的有点不值，换电脑后折腾了两个小时把原来的博客都搬到新电脑上面，换了个主题心情大好~。</p>
+<p>三个月其实也没有做什么东西，一直在上课和划水。</p>
+<p>RTS：李老师的课听得一脸懵…整个人都不太好，还好有万能的同学们一起讨论。也还好它结课了，整个人都轻松了hhh札记可太难了=_=</p>
+<p>近期的小目标是学会C++的基本使用和做项目，当然还有考试和作业。</p>
+<p>写的好水啊…没有任何干货（这篇后面会删掉吧hhh</p>
 ]]></content>
-      <categories>
-        <category>Python学习</category>
-      </categories>
       <tags>
-        <tag>learning</tag>
-        <tag>python</tag>
+        <tag>about_life</tag>
       </tags>
   </entry>
   <entry>
@@ -549,6 +541,44 @@
       </categories>
       <tags>
         <tag>tensorflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tensorflow_learning_2</title>
+    <url>/2019/05/20/tensorflow-learning-2/</url>
+    <content><![CDATA[<h1 id="tensorflow学习笔记-2"><a href="#tensorflow学习笔记-2" class="headerlink" title="tensorflow学习笔记_2"></a>tensorflow学习笔记_2</h1><h2 id="计算图与张量"><a href="#计算图与张量" class="headerlink" title="计算图与张量"></a>计算图与张量</h2><p>TensorFlow中的计算可以表示为一个有向图（<strong>计算图</strong>），其中每一个运算操作作为一个节点，节点与节点的连接称为边，一张计算图描述了数据的计算流程，我们可以对计算图上的各个分支进行改变来达到我们的运算目的。在计算图的边中流动的数据被称为<strong>张量</strong>（tensor），张量的数据类型可以事先定义，也可以通过计算图的结构推导得出。</p>
+<p>一个运算操作代表了一类抽象运算（如矩阵乘法或向量加法），运算操作必须有自己的属性，但是所有属性都必须被预先设置，或者在计算图沿着边运行时可以被推断出来。</p>
+<h2 id="会话-Session"><a href="#会话-Session" class="headerlink" title="会话 Session"></a>会话 Session</h2><p>session是用户使用tensorflow的互交式接口，用户可以通过session的Extend方法添加新的节点和边来创建计算图，然后通过session的Run方法执行计算图。</p>
+<p>大多数运算中，tensor不会一直保留下去。而Variable是一类特殊的运算操作，可以将一些需要保留的tensor储存在内存或者显存当中。每执行一次计算图后，Variable中的tensor都会被保存，同时在计算过程中，tensor的值也可以被更新。</p>
+<hr>
+<p>csdn上还是有很多的教程   <a href="https://www.cnblogs.com/hypnus-ly/p/8040951.html" target="_blank" rel="noopener">概念理解</a></p>
+<h2 id="MNIST手写数字识别"><a href="#MNIST手写数字识别" class="headerlink" title="MNIST手写数字识别"></a>MNIST手写数字识别</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">mnist = input_data.read_data_sets(<span class="string">"MNIST_data/"</span>, one_hot=<span class="literal">True</span>)</span><br><span class="line">print(mnist.train.images.shape,mnist.train.labels.shape)</span><br><span class="line">print(mnist.test.images.shape,mnist.test.labels.shape)</span><br><span class="line">print(mnist.validation.images.shape,mnist.validation.labels.shape)</span><br></pre></td></tr></table></figure>
+<p>结果输出为</p>
+<p>(55000, 784) (55000, 10)<br>(10000, 784) (10000, 10)<br>(5000, 784) (5000, 10)</p>
+<p><a href="https://github.com/yhlleo/mnist" target="_blank" rel="noopener">一个例程</a> 存</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>tensorflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>update</title>
+    <url>/2019/03/01/update/</url>
+    <content><![CDATA[<h1 id="注册了域名解析到博客网址上面"><a href="#注册了域名解析到博客网址上面" class="headerlink" title="注册了域名解析到博客网址上面"></a>注册了域名解析到博客网址上面</h1><p> 开学一周四节课正是很闲的时候<del>其实是闲得无聊又不想学习</del>，花时间把这个博客搭好了，感觉像学cadence和mul一样…熟能生巧吧。</p>
+<blockquote>
+<p>阿里云据说比腾讯云更安全一点，但是价格上感觉两家差不多。</p>
+</blockquote>
+<hr>
+<p>另，找了一篇Markdown基本语法的介绍，如下：<br><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank">Markdown</a></p>
+]]></content>
+      <categories>
+        <category>HEXO搭建</category>
+      </categories>
+      <tags>
+        <tag>daily</tag>
       </tags>
   </entry>
   <entry>
@@ -591,23 +621,6 @@
 ]]></content>
       <tags>
         <tag>tensorflow</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>update</title>
-    <url>/2019/03/01/update/</url>
-    <content><![CDATA[<h1 id="注册了域名解析到博客网址上面"><a href="#注册了域名解析到博客网址上面" class="headerlink" title="注册了域名解析到博客网址上面"></a>注册了域名解析到博客网址上面</h1><p> 开学一周四节课正是很闲的时候<del>其实是闲得无聊又不想学习</del>，花时间把这个博客搭好了，感觉像学cadence和mul一样…熟能生巧吧。</p>
-<blockquote>
-<p>阿里云据说比腾讯云更安全一点，但是价格上感觉两家差不多。</p>
-</blockquote>
-<hr>
-<p>另，找了一篇Markdown基本语法的介绍，如下：<br><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank">Markdown</a></p>
-]]></content>
-      <categories>
-        <category>HEXO搭建</category>
-      </categories>
-      <tags>
-        <tag>daily</tag>
       </tags>
   </entry>
 </search>
