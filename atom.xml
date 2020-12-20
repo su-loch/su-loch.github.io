@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-05T13:55:33.974Z</updated>
+  <updated>2020-12-20T03:24:45.453Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cpp learning note</title>
+    <link href="http://yoursite.com/2020/12/19/Cpp-learning-note/"/>
+    <id>http://yoursite.com/2020/12/19/Cpp-learning-note/</id>
+    <published>2020-12-19T09:37:52.000Z</published>
+    <updated>2020-12-20T03:24:45.453Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近因为项目而学习C++</p><p>学习资源：<a href="https://www.icourse163.org/course/NWPU-494001?tid=1450728827" target="_blank" rel="noopener">西北工业大学 C++程序设计</a>、<a href="https://www.icourse163.org/course/QDU-1458424165" target="_blank" rel="noopener">青岛大学 面向对象程序设计（C++和Java）</a></p><h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>C++允许在函数定义或声明时，为形参指定默认值，这样的参数称为默认参数。</p><p>（1）如果在函数定义时设置了默认参数，那么就不能在函数声明中再次设置，反之亦然。</p><p>（2）可以设置多个默认参数，设置的顺序自右向左，即要设置默认值的参数右边的所有参数都必须是默认参数。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">volume</span><span class="params">(<span class="keyword">int</span> L, <span class="keyword">int</span> W, <span class="keyword">int</span> H = <span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">volume</span><span class="params">(<span class="keyword">int</span> L = <span class="number">1</span>, <span class="keyword">int</span> W = <span class="number">1</span>, <span class="keyword">int</span> H = <span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="comment">//上面都是正确的</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">volume</span><span class="params">(<span class="keyword">int</span> L = <span class="number">1</span>, <span class="keyword">int</span> W, <span class="keyword">int</span> H)</span></span>;<span class="comment">//错误</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">volume</span><span class="params">(<span class="keyword">int</span> L, <span class="keyword">int</span> W = <span class="number">1</span>; <span class="keyword">int</span> H)</span></span>;<span class="comment">//错误</span></span><br></pre></td></tr></table></figure><p>（3）默认值可以是常量、全局变量和函数调用（调用实参必须是常量或全局变量的表达式，不可以是局部变量）</p><a id="more"></a><h3 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h3><p>function overloading是在同一个域中用同一个函数名来定义多个函数，但是函数参数列表彼此不同（个数不同或参数类型不同）</p><ul><li>编译程序将根据实参和形参的类型和个数的最佳匹配来选择调用哪一个函数</li></ul><h3 id="数组作为函数的参数"><a href="#数组作为函数的参数" class="headerlink" title="数组作为函数的参数"></a>数组作为函数的参数</h3><p>如果实参使用数组名，本质上是将这个数组的首地址传递到形参中。数组实参a传递的是数组首地址，形参A定义为数组形式，此时A 的地址与a一样，本质上形参数组A就是实参数组a（内存中两个对象所处位置相同，则实际上它们是同一个对象）</p><blockquote><p>和指针类似，指针传递的也是地址，这样做可以直接改变多个数组元素，而不用返回</p></blockquote><h3 id="数组参数的传递机制"><a href="#数组参数的传递机制" class="headerlink" title="数组参数的传递机制"></a>数组参数的传递机制</h3><ul><li>数组作为函数的参数，传递的是数组的地址（数组在内存中是一段区域内连续的）</li></ul><p>（1）在被调函数中使用形参就是间接使用实参（与变量不同）</p><p>（2）函数调用时不会为形参数组分配存储空间，即形参数组的长度无实际作用，所以形参数组甚至可不给出长度</p><p>（3）函数如何知道数组的长度-&gt;函数调用时再给出一个参数来表示实参数组的长度</p><p>（4）多维数组作为函数的参数，形参数组除第一维任意，其他维的长度需要与实参数组相同</p><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>C++语言规定字符串是以’\0’字符作为结束符的<strong>字符数组</strong>，空字符表示字符串的结束位置</p><p>定义字符数组的长度至少为字符串长度加1（空字符占1位）</p><p>C++在编译时自动在字符串常量后增加一个空字符</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//C++中兼容C语言的字符串处理函数的头文件string.h</span></span><br><span class="line"><span class="built_in">strcpy</span>(str1, str2);<span class="comment">//copy</span></span><br><span class="line"><span class="built_in">strncpy</span>(str1, str2, n);<span class="comment">//copy前n个</span></span><br><span class="line"><span class="built_in">strcat</span>(str1, str2);<span class="comment">//连接</span></span><br><span class="line"><span class="built_in">strncat</span>(str1, str2, n);<span class="comment">//连接前n个</span></span><br><span class="line"><span class="built_in">strcmp</span>(str1, str2);<span class="comment">//比较字符串</span></span><br><span class="line"><span class="built_in">strlen</span>(str);<span class="comment">//length</span></span><br><span class="line">atof(<span class="string">"123.456"</span>);</span><br><span class="line">atoi(<span class="string">"-456"</span>);<span class="comment">//string转换成数值函数</span></span><br></pre></td></tr></table></figure><h3 id="字符串对象"><a href="#字符串对象" class="headerlink" title="字符串对象"></a>字符串对象</h3><p>采用类来实现字符串</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">char</span> S1[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">string</span> str1;</span><br><span class="line"><span class="keyword">char</span> S2[<span class="number">20</span>] = <span class="string">"Java"</span>;<span class="comment">//C风格字符串初始化</span></span><br><span class="line"><span class="built_in">string</span> str2 = <span class="string">"Java"</span>;<span class="comment">//string对象copy初始化</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">str3</span><span class="params">(<span class="string">"Java"</span>)</span></span>;<span class="comment">//string对象直接初始化</span></span><br></pre></td></tr></table></figure><p>string对象允许使用+和复合运算符+=实现连接，可以调用其他<strong>成员函数</strong>来实现字符串处理（与java中的method相同）</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;最近因为项目而学习C++&lt;/p&gt;
+&lt;p&gt;学习资源：&lt;a href=&quot;https://www.icourse163.org/course/NWPU-494001?tid=1450728827&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;西北工业大学 C++程序设计&lt;/a&gt;、&lt;a href=&quot;https://www.icourse163.org/course/QDU-1458424165&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;青岛大学 面向对象程序设计（C++和Java）&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;默认参数&quot;&gt;&lt;a href=&quot;#默认参数&quot; class=&quot;headerlink&quot; title=&quot;默认参数&quot;&gt;&lt;/a&gt;默认参数&lt;/h3&gt;&lt;p&gt;C++允许在函数定义或声明时，为形参指定默认值，这样的参数称为默认参数。&lt;/p&gt;
+&lt;p&gt;（1）如果在函数定义时设置了默认参数，那么就不能在函数声明中再次设置，反之亦然。&lt;/p&gt;
+&lt;p&gt;（2）可以设置多个默认参数，设置的顺序自右向左，即要设置默认值的参数右边的所有参数都必须是默认参数。&lt;/p&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;volume&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; L, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; W, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; H = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;volume&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; L = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; W = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; H = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//上面都是正确的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;volume&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; L = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; W, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; H)&lt;/span&gt;&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//错误&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;volume&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; L, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; W = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; H)&lt;/span&gt;&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//错误&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;（3）默认值可以是常量、全局变量和函数调用（调用实参必须是常量或全局变量的表达式，不可以是局部变量）&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>summary_about_the_half_year</title>
@@ -445,9 +470,9 @@
     <category term="Python学习" scheme="http://yoursite.com/categories/Python学习/"/>
     
     
-    <category term="learning" scheme="http://yoursite.com/tags/learning/"/>
-    
     <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+    <category term="learning" scheme="http://yoursite.com/tags/learning/"/>
     
   </entry>
   
@@ -475,28 +500,6 @@
     <category term="learning" scheme="http://yoursite.com/tags/learning/"/>
     
     <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>a_tool</title>
-    <link href="http://yoursite.com/2019/03/15/a-tool/"/>
-    <id>http://yoursite.com/2019/03/15/a-tool/</id>
-    <published>2019-03-15T15:47:59.000Z</published>
-    <updated>2019-05-04T04:22:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="深夜的发现"><a href="#深夜的发现" class="headerlink" title="深夜的发现"></a>深夜的发现</h1><p>围观了大佬的公众号，想从github上面把代码下载下来<del>学习</del>一下,但是遇到了要把一整个仓库的文件都clone下来的问题…于是百度了下载指定文件夹下文件的做法，发现最简单的方法是把链接直接复制在Downgit网站上(这里附上MinhasKamal/DownGit的网址: <a href="https://minhaskamal.github.io/DownGit/" target="_blank">DownGit</a>)，下载即可。但是又遇到了网站加载不出来的问题，最后发现了另一个大佬移植的网站，尽管这个网址的资源加载也有问题，但是总的来说还可以用，就是等待时间可能会比较长，给人的感觉是这个网站也不能用(<del>嗯？？我折腾了这么久还是不能用？？</del>)，看样子已经是很久没有人维护了…网址如下: <a href="http://downgit.zhoudaxiaa.com/#/home" target="_blank">周大侠啊DownGit</a><br>安了pygame模块就可以愉快地玩游戏啦~<br>另，最近觉得很有意思的表情包上面的梗，以及附上新的md语法介绍：<a href="https://coding.net/help/doc/project/markdown.html" target="_blank" rel="noopener">MarkDown基本语法</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String s=<span class="string">"\u4f18\u79c0"</span>;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;深夜的发现&quot;&gt;&lt;a href=&quot;#深夜的发现&quot; class=&quot;headerlink&quot; title=&quot;深夜的发现&quot;&gt;&lt;/a&gt;深夜的发现&lt;/h1&gt;&lt;p&gt;围观了大佬的公众号，想从github上面把代码下载下来&lt;del&gt;学习&lt;/del&gt;一下,但是遇到了要把一整个仓库的文件</summary>
-      
-    
-    
-    
-    
-    <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
   </entry>
   
