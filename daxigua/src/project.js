@@ -987,9 +987,9 @@ window.__require = function e(t, n, o) {
                         scale: .9
                     }).union().repeatForever().start()
                 }, t.prototype.update = function(e) {}, t.prototype.adsButtonFunc2 = function() {
-                    window.location.href = "https://www.qwas.top"
+                    window.location.href = "https://www.isloch.top"
                 }, t.prototype.bannerButtonFunc = function() {
-                    window.location.href = "https://www.qwas.top"
+                    window.location.href = "https://www.isloch.top"
                 }, t.prototype.ShowFailedUi = function(e, t) {
                     e = e * (window.difficulty[0] + 1);
                     t = t * (window.difficulty[0] + 1);
@@ -1009,7 +1009,7 @@ window.__require = function e(t, n, o) {
                     this.canClick && 0 == cc.find("Canvas/uiEffectPanel").childrenCount && a.default.Instance.RestartGame()
                 }, t.prototype.OnClickMoreGame = function() {
                     this.canClick && (this.moreGameBtn.off(cc.Node.EventType.TOUCH_START, this.OnClickMoreGame, this), this.canClick = !1, this.moreGameBtn.runAction(cc.sequence(cc.scaleTo(.1, 1.1), cc.scaleTo(.1, 1))), this.scheduleOnce(function() {
-                        window.location.href = "http://dxg.qwas.top"
+                        window.location.href = "http://dxg.isloch.top"
                     }, .15))
                 }, t.prototype.GetContentByScore = function(e) {
                     var t = Math.ceil(e / 1500 * 94);
@@ -1826,7 +1826,7 @@ window.__require = function e(t, n, o) {
                 cc.find("Canvas/adsLayer").active = !0, cc.find("Canvas/adsLayer").setContentSize(cc.winSize.width, cc.winSize.height)
             },
             AdsLink: function() {
-                window.location.href = "https://www.qwas.top"
+                window.location.href = "https://www.isloch.top"
             },
             closeAdsLayer: function() {
                 cc.find("Canvas/adsLayer").active = !1
@@ -1917,7 +1917,7 @@ window.__require = function e(t, n, o) {
                 }, t.prototype.update = function(e) {
                     this.UpdateScoreLabel(e), this.lerpCtrl && this.lerpNumFunc(this.passlevelYQ), this.levelPanel.children[1].getComponent(cc.Label).string = s.default.Instance.GetLevel().toString()
                 }, t.prototype.adsButtonFunc = function() {
-                    window.location.href = "https://www.qwas.top"
+                    window.location.href = "https://www.isloch.top"
                 }, t.prototype.TestPasslevel = function() {
                     var e = this;
                     this.lerpCtrl = !0, this.nowYQ >= this.passlevelYQ && (this.levelPanel.children[2].runAction(cc.sequence(cc.delayTime(1.3), cc.callFunc(function() {
