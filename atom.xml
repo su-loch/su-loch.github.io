@@ -470,9 +470,9 @@
     <category term="Python学习" scheme="http://yoursite.com/categories/Python学习/"/>
     
     
-    <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
     <category term="learning" scheme="http://yoursite.com/tags/learning/"/>
+    
+    <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
