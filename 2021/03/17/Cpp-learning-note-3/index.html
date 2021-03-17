@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="_Silhouttes">
+
+
+
+    <meta name="description" content="just record">
+
+
+
+<title>Cpp_learningnote3 | sl&#39;s learning notes</title>
+
+
+
+    <link rel="icon" href="/su_loch.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<link rel="alternate" href="/atom.xml" title="sl's learning notes" type="application/atom+xml">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">loch&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/daxigua/index.html">Watermelon</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">loch&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/daxigua/index.html">Watermelon</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Cpp_learningnote3</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">_Silhouttes</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">三月 17, 2021&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>[toc]</p>
+<p>reference：《黑马》C++系列教程 <a href="https://blog.csdn.net/ClaireSy/article/details/108422945" target="_blank" rel="noopener">基础</a> <a href="https://blog.csdn.net/ClaireSy/article/details/108423047" target="_blank" rel="noopener">核心</a> <a href="https://blog.csdn.net/ClaireSy/article/details/108423061" target="_blank" rel="noopener">提高</a></p>
+<blockquote>
+<p>本篇主要参考提高篇进行记录</p>
+</blockquote>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><ul>
+<li><p>模板就是建立通用的模具，提高复用性。模板只是一个框架，不能直接使用</p>
+</li>
+<li><p><strong>函数模板</strong></p>
+<ul>
+<li>C++另一种编程思想称为 <strong>泛型编程</strong>，主要利用的技术就是模板</li>
+<li>C++提供两种模板机制：函数模板 和 类模板</li>
+</ul>
+</li>
+</ul>
+<p>函数模板语法：<code>template&lt;typename T&gt;</code>，其中typename可以用class代替</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(T&amp; a,T&amp; b)</span></span>&#123;</span><br><span class="line">	T temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>,b = <span class="number">20</span>;</span><br><span class="line">	Swap(a, b);<span class="comment">//1.自动类型推导</span></span><br><span class="line">	Swap&lt;<span class="keyword">int</span>&gt;(a, b);<span class="comment">//2.显示指定类型</span></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>*tips：</p>
+<ol>
+<li><p>自动类型推导，必须推导出<strong>一致的数据类型T</strong>才可以使用</p>
+</li>
+<li><p>显示指定类型，必须<strong>确定出T的数据类型</strong>才可以使用</p>
+</li>
+</ol>
+<p>也就是说，凡是给出了模板定义，之后跟着的函数，必须给出数据类型才能调用。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"test"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;<span class="comment">//函数中没用用到模板类型T，但是调用时必须给出才能使用</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>普通函数与函数模板的区别</li>
+</ul>
+<ol>
+<li>普通函数调用时可以发生自动类型转换（隐式类型转换）</li>
+<li>函数模板调用的时候，如果利用自动类型推导，不会发生隐式类型转换</li>
+<li>如果利用显式指定类型的方式，可以发生隐式类型转换</li>
+</ol>
+<ul>
+<li>普通函数与函数模板的调用规则</li>
+</ul>
+<ol>
+<li>如果函数模板和普通函数都可以实现，优先调用普通函数</li>
+<li>可以通过空模板参数列表来强制调用函数模板  <code>funtion&lt;&gt;(a, b);</code></li>
+<li>函数模板也可以发生重载</li>
+<li>如果函数模板可以产生更好的匹配（例如不用进行隐式转换），优先调用函数模板</li>
+</ol>
+<ul>
+<li>模板的局限性：传入数组、类对象、自定义数据类型等数据不能处理，可以为这些特定的类型提供具体化的模板</li>
+</ul>
+<p>具体化的模板以<code>template&lt;&gt;</code>开头，通过名称来指出类型，具体化优先于常规模板</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;&gt; <span class="keyword">bool</span> <span class="title">compare</span><span class="params">(Person&amp; p1, Person&amp; p2)</span></span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>类模板</strong></li>
+</ul>
+<p>建立一个通用类，类中的成员数据类型可以不具体指定，用一个虚拟的类型来代表</p>
+<p>语法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1， <span class="keyword">typename</span> T2, ...&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>类模板与函数模板的区别</li>
+</ul>
+<ol>
+<li>类模板<strong>没有自动类型推导</strong>的使用方式</li>
+<li>类模板在模板参数列表中可以有默认参数（在显示指定的时候可以更换参数类型，如int-&gt;double）</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">nametype</span>, <span class="title">class</span> <span class="title">agetype</span> = <span class="title">int</span>&gt;//2.<span class="title">defualt</span> <span class="title">parameter</span></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Person</span>&#123;</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Person &lt;string, double&gt;p('string',10);//1.显示指定</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>类模板中的成员函数并不是一开始就创建的，在调用的时候才会创建</li>
+<li>类模板对象做函数参数</li>
+</ul>
+<ol>
+<li>指定传入的类型 – 直接显示对象的数据类型</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printPerson1</span><span class="params">(Person&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; &amp;p)</span></span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>参数模板化 – 将对象中的参数变为模板进行传递</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T1</span>, <span class="title">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">printPerson2</span>(<span class="title">Person</span>&lt;T1, T2&gt;&amp;<span class="title">p</span>)&#123;</span></span><br><span class="line">	p.showPerson();</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"T1的类型为： "</span> &lt;&lt; <span class="keyword">typeid</span>(T1).name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"T2的类型为： "</span> &lt;&lt; <span class="keyword">typeid</span>(T2).name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>整个类模板化 – 将这个对象类型模板化进行传递</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">printPerson3</span>(<span class="title">T</span> &amp; <span class="title">p</span>)&#123;</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"T的类型为： "</span> &lt;&lt; <span class="keyword">typeid</span>(T).name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	p.showPerson();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>_Silhouttes</span>
+                    </p>
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/c/"># c++</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/03/17/Cpp-learning-note-2/">Cpp_learningnote2</a>
+            
+            
+            <a class="next" rel="next" href="/2021/03/17/Makefile/">makefile</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© _Silhouttes | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

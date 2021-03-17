@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="_Silhouttes">
+
+
+
+    <meta name="description" content="just record">
+
+
+
+<title>makefile | sl&#39;s learning notes</title>
+
+
+
+    <link rel="icon" href="/su_loch.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<link rel="alternate" href="/atom.xml" title="sl's learning notes" type="application/atom+xml">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">loch&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/daxigua/index.html">Watermelon</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">loch&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/daxigua/index.html">Watermelon</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">makefile</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">_Silhouttes</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">三月 17, 2021&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="Makefile-learning"><a href="#Makefile-learning" class="headerlink" title="Makefile_learning"></a>Makefile_learning</h2><blockquote>
+<p>教程：<a href="http://c.biancheng.net/makefile/" target="_blank" rel="noopener">http://c.biancheng.net/makefile/</a></p>
+</blockquote>
+<p>makefile描述的是文件编译的相关规则，由依赖的关系和执行的命令两部分组成</p>
+<ul>
+<li>结构：</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">targets: prerequisites</span></span><br><span class="line">	command</span><br></pre></td></tr></table></figure>
+<ul>
+<li>targets：规则的目标，可以是中间文件（*.o），也可以是执行文件（*.elf），还可以是一个标签（clean等）</li>
+<li>prerequisites：依赖文件，要生成targets需要的文件或目标</li>
+<li>command：make需要执行的命令（任意的shell命令）</li>
+</ul>
+<blockquote>
+<p>attention：目标和依赖之间要用冒号分隔开，命令的开始一定要使用<code>tab</code>键</p>
+</blockquote>
+<h3 id="makefile的工作流程"><a href="#makefile的工作流程" class="headerlink" title="makefile的工作流程"></a>makefile的工作流程</h3><p>默认情况下，make执行的是Makefile中的第一规则（Makefile中出现的第一个依赖关系），此规则的第一目标称为“最终目标”，根据依赖关系查找下一条要执行的规则。</p>
+<p>这里我们知道，编译时生成的 “.o” 文件。作用是检查某个源文件是不是进行过修改，最终目标文件是不是需要重建。</p>
+<p>清除过程文件：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>: clean</span></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	rm -rf *.0 test</span><br></pre></td></tr></table></figure>
+<p>Makefile文件所在目录有文件名为clean的文件，命令行“.PHONY: clean”又没添加的话，执行make clean是无效的，“.PHONY: clean”就是保证即使目录下有文件名为clean的文件，也能正常执行make clean</p>
+<h3 id="通配符的使用"><a href="#通配符的使用" class="headerlink" title="通配符的使用"></a>通配符的使用</h3><p>通配符可以出现在模式的规则中，也可以出现在命令中</p>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>使用说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>匹配0个或者是任意个字符</td>
+</tr>
+<tr>
+<td>？</td>
+<td>匹配任意一个字符</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>我们可以指定匹配的字符放在 “[]” 中</td>
+</tr>
+<tr>
+<td>%</td>
+<td>匹配任意个字符，储存名字在一个列表中，挨个查找</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>如果我们的通配符使用在<strong>依赖的规则中</strong>的话一定要注意这个问题：不能通过引用变量的方式来使用，但就是想要通过引用变量的话，我们要使用一个函数 “wildcard”，这个函数在我们引用变量的时候，会帮我们展开</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OBJ = <span class="variable">$(<span class="built_in">wildcard</span> *.c)</span></span><br><span class="line"><span class="section">test: <span class="variable">$(OBJ)</span></span></span><br><span class="line">	gcc -o <span class="variable">$@</span> <span class="variable">$^</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量的定义和使用"><a href="#变量的定义和使用" class="headerlink" title="变量的定义和使用"></a>变量的定义和使用</h3><ul>
+<li>基本语法<code>VALUE_LIST = one two three</code></li>
+</ul>
+<p>调用变量的时候用<code>$(VALUE_LIST)</code>或<code>${VALUE_LIST}</code>来替换</p>
+<ul>
+<li>四种基本赋值方式<ul>
+<li>简单赋值（:=）只对当前语句的变量有效</li>
+<li>递归赋值（=）所有目标变量相关的其他变量都受影响</li>
+<li>条件赋值（?=）如果变量未定义，则使用符号中的值（等号后的值）定义变量，如果变量已经赋值，则该赋值语句无效（保持原定义的值）</li>
+<li>追加赋值（+=）原变量用空格隔开的方式追加一个新值</li>
+</ul>
+</li>
+</ul>
+<h3 id="makefile自动化变量"><a href="#makefile自动化变量" class="headerlink" title="makefile自动化变量"></a>makefile自动化变量</h3><p>自动化变量可以理解为由 Makefile 自动产生的变量，自动化变量的取值根据执行的规则来决定，取决于执行规则的目标问价和依赖文件。</p>
+<table>
+<thead>
+<tr>
+<th>自动化变量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$@</td>
+<td>表示规则的目标文件名。如果目标是一个文档文件（Linux 中，一般成 .a 文件为文档文件，也成为静态的库文件）， 那么它代表这个文档的文件名。在多目标模式规则中，它代表的是触发规则被执行的文件名。</td>
+</tr>
+<tr>
+<td>$%</td>
+<td>当目标文件是一个静态库文件时，代表静态库的一个成员名。</td>
+</tr>
+<tr>
+<td>$&lt;</td>
+<td>规则的第一个依赖的文件名。如果是一个目标文件使用隐含的规则来重建，则它代表由隐含规则加入的第一个依赖文件。</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>所有比目标文件更新的依赖文件列表，空格分隔。如果目标文件时静态库文件，代表的是库文件（.o 文件）。</td>
+</tr>
+<tr>
+<td>$^</td>
+<td>代表的是所有依赖文件列表，使用空格分隔。如果目标是静态库文件，它所代表的只能是所有的库成员（.o 文件）名。 一个文件可重复的出现在目标的依赖中，变量“$^”只记录它的第一次引用的情况。就是说变量“$^”会去掉重复的依赖文件。</td>
+</tr>
+<tr>
+<td>$+</td>
+<td>类似“$^”，但是它保留了依赖文件中重复出现的文件。主要用在程序链接时库的交叉引用场合。</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>在模式规则和静态模式规则中，代表“茎”。“茎”是目标模式中“%”所代表的部分（当文件名中存在目录时， “茎”也包含目录部分）。</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>_Silhouttes</span>
+                    </p>
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/linux/"># linux</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/03/17/Cpp-learning-note-3/">Cpp_learningnote3</a>
+            
+            
+            <a class="next" rel="next" href="/2020/12/19/Cpp-learning-note/">Cpp learning note</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© _Silhouttes | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

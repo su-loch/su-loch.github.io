@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="_Silhouttes">
+
+
+
+    <meta name="description" content="just record">
+
+
+
+<title>Cpp_learningnote2 | sl&#39;s learning notes</title>
+
+
+
+    <link rel="icon" href="/su_loch.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<link rel="alternate" href="/atom.xml" title="sl's learning notes" type="application/atom+xml">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">loch&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/daxigua/index.html">Watermelon</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">loch&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/daxigua/index.html">Watermelon</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Cpp_learningnote2</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">_Silhouttes</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">三月 17, 2021&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>[toc]</p>
+<p>reference：《黑马》C++系列教程 <a href="https://blog.csdn.net/ClaireSy/article/details/108422945" target="_blank" rel="noopener">基础</a> <a href="https://blog.csdn.net/ClaireSy/article/details/108423047" target="_blank" rel="noopener">核心</a> <a href="https://blog.csdn.net/ClaireSy/article/details/108423061" target="_blank" rel="noopener">提高</a></p>
+<blockquote>
+<p>本篇主要参考核心篇进行记录</p>
+</blockquote>
+<h2 id="内存分区"><a href="#内存分区" class="headerlink" title="内存分区"></a>内存分区</h2><ul>
+<li>栈区：由编译器自动分配释放, 存放函数的参数值,局部变量等</li>
+<li>堆区：由程序员分配和释放,若程序员不释放,程序结束时由操作系统回收</li>
+</ul>
+<p>在C++中主要利用new在堆区开辟内存，释放利用操作符 delete，note释放数组 delete 后加 []</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul>
+<li><p>不要返回局部变量引用，可以返回静态变量引用 static</p>
+</li>
+<li><p>引用的本质，在C++内部实现是一个指针常量</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span>&amp; ref = a;</span><br><span class="line"><span class="comment">//自动转化为int* const ref = &amp;a; 指针常量是指针指向不可改</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在函数形参列表中，可以加const修饰形参，防止形参改变实参</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>&amp; ref = <span class="number">10</span>;  <span class="comment">//是错误的，引用本身需要一个合法的内存空间，不能直接赋值</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>&amp; ref = <span class="number">10</span>;</span><br><span class="line"><span class="comment">//加入const，编译器会优化代码，int temp = 10; const int&amp; ref = temp;</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.引用作为重载条件</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span>&amp; a)</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>&amp; a)</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> a </span>= <span class="number">10</span>;</span><br><span class="line">func(a);</span><br><span class="line">func(<span class="number">10</span>);<span class="comment">//调用不同的函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.函数重载遇到函数默认参数</span></span><br><span class="line">func2(<span class="keyword">int</span> a, <span class="keyword">int</span> b = <span class="number">10</span>)</span><br><span class="line">func2(<span class="keyword">int</span> a)</span><br><span class="line"><span class="comment">//这样的定义在调用的时候会报错</span></span><br><span class="line">func2(<span class="number">10</span>);<span class="comment">//产生歧义，不能做出调用函数的判断</span></span><br></pre></td></tr></table></figure>
+<h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><blockquote>
+<p>OOP - <strong>封装、继承、多态</strong></p>
+</blockquote>
+<p>一、about <strong>类</strong></p>
+<ul>
+<li>语法：class 类名{ 访问权限: 属性 / 行为};</li>
+<li>类在设计时，可以把属性和行为放在不同权限下，加以控制</li>
+</ul>
+<p>访问权限有三种：</p>
+<p>– public 公共权限：        类内可以访问，类外可以访问（只允许本类的成员函数访问） </p>
+<p>– protected 保护权限 ：类内可以访问，类外不可以访问 （只允许子类及本类的成员函数访问）</p>
+<p>– private 私有权限：      类内可以访问，类外不可以访问（可以被任意实体访问）</p>
+<ul>
+<li>在C++中 struct 和 class 唯一的区别就在于默认的访问权限不同，struct默认权限为公共，class默认权限为私有</li>
+</ul>
+<p>二、concerning <strong>对象</strong></p>
+<ul>
+<li>对象的初始化和清理 – 构造函数和析构函数</li>
+</ul>
+<p>如果编程者不提供，编译器会自动提供空实现的构造和析构函数（这时候编译器自动添加的拷贝构造对属性的拷贝是浅拷贝</p>
+<p><strong>–构造函数语法</strong>： 类名(){}</p>
+<ol>
+<li>构造函数没有返回值也不写void</li>
+<li>函数名称与类名相同</li>
+<li>构造函数可以参数，可能发生函数重载</li>
+<li>程序在调用对象的时候会自动调用构造，且只调用一次</li>
+</ol>
+<p><strong>分类</strong> 按参数：有参构造、无参构造 按类型：普通构造、拷贝构造</p>
+<p><strong>调用方式</strong> 括号法、显式法（类似java）、隐式转换法</p>
+<p>*tips:</p>
+<ol>
+<li><p>调用无参构造函数不能加括号，加了编译器认为这是一个函数声名；</p>
+</li>
+<li><p>不能利用拷贝构造函数初始化匿名对象，编译器认为是对象声明；</p>
+</li>
+<li>拷贝构造函数的调用时机：<ul>
+<li>使用一个已创建好的对象初始化新的对象</li>
+<li>值传递的方式给函数参数传值</li>
+<li>以值的方式返回局部对象 </li>
+</ul>
+</li>
+</ol>
+<p><strong>– 析构函数语法</strong>：~类名(){}</p>
+<ol>
+<li>析构函数没有返回值也不写void</li>
+<li>函数名称与类名相同，前面加上符号~</li>
+<li>析构函数不可以有参数，不能发生重载</li>
+<li>程序在对象销毁前会自动调用析构，且只调用一次</li>
+</ol>
+<p>（一）深拷贝与浅拷贝</p>
+<p>浅拷贝：简单的赋值拷贝操作</p>
+<p>深拷贝：在<strong>堆区</strong>重新申请空间进行拷贝操作</p>
+<p>如果属性有在堆区开辟的，一定要自己提供拷贝构造函数，防止浅拷贝带来的在delete时出现的问题</p>
+<p>new -&gt; 在堆空间创建一块内存并返回内存地址给指针</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* p = <span class="keyword">new</span> <span class="keyword">int</span>(<span class="number">10</span>);<span class="comment">//这里定义变量类型为指针</span></span><br></pre></td></tr></table></figure>
+<p>（二）初始化列表</p>
+<p>语法：构造函数(): 属性1(值1)， 属性2(值2), …{}</p>
+<p>只有构造函数可以使用初始化列表语法，引用数据成员与const数据成员必须使用这种语法，因为它们在创建时就需要初始化</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c) :m_A(a), m_B(b), m_C(c) &#123;&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> m_A:</span><br><span class="line">	<span class="keyword">int</span> m_B;</span><br><span class="line">	<span class="keyword">int</span> m_C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（三）类对象作为类成员</p>
+<p>当类中成员时其他类对象时，我们称该成员为 对象成员</p>
+<p>构造的顺序是：先调用对象成员的构造，再调用本类构造。析构的顺序与构造相反</p>
+<p>（四）静态成员</p>
+<p>在成员变量和成员函数前加上关键字static，称为静态成员</p>
+<ul>
+<li><p>静态成员变量（2种访问方式：通过对象、通过类名）</p>
+<ul>
+<li>所有对象共享同一份数据</li>
+<li>在编译阶段分配内存</li>
+<li><strong>类内声明，类外初始化</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> m_A;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> m_B;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> Person::m_A = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> Person::m_B = <span class="number">10</span>;<span class="comment">//类外初始化</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; Person::m_A &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//通过类名访问</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; Person::m_B &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//会报错，没有访问权限</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>静态成员函数</p>
+<ul>
+<li>所有对象共享同一个函数</li>
+<li>静态成员函数只能访问静态成员变量</li>
+</ul>
+</li>
+</ul>
+<p>三、C++对象模型和this指针</p>
+<p>在C++中，类内的成员变量和成员函数 分开储存，只有非静态成员变量才属于类的对象上。非静态成员变量占用对象空间，而静态成员变量和成员函数（静态/非静态）都不占用对象空间，所有非静态成员函数共享一个函数实例。</p>
+<ul>
+<li><p><strong>this指针</strong> 指向被调用成员函数所属的对象</p>
+<ul>
+<li>this指针是隐含在每一个<strong>非静态成员函数内</strong>的一种指针</li>
+<li>不需要定义可以直接使用</li>
+<li>用途：当形参和成员变量同名时，用this指针区分；在类的非静态成员函数中返回对象本身，可使用return *this</li>
+<li>空指针也可以调用成员函数，但是当成员函数用到了this指针则不可以，这个时候需要对指针进行非空判断，保证代码的健壮性</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person* p = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">this</span> == <span class="literal">NULL</span>) <span class="keyword">return</span>;<span class="comment">//非空判断</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>常函数</strong>：成员函数后加const​，在常函数内不可以修改成员属性，但是当成员属性声明时添加mutable关键字，在常函数内仍可以进行修改</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;...&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> m_A;</span><br><span class="line">	<span class="keyword">mutable</span> <span class="keyword">int</span> m_B;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>常对象</strong>：声明对象前加const，常对象只能调用常函数，不能修改成员变量的值，但是可以访问</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Person person;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>四、友元 -&gt; 让一个函数或者类访问另一个类中的私有成员</p>
+<p><strong>关键字</strong> friend</p>
+<p>三种实现</p>
+<ul>
+<li>全局函数左右元</li>
+<li>类做友元</li>
+<li>成员函数做友元</li>
+</ul>
+<p>五、运算符重载 -&gt; 对已有的运算符重新进行定义，赋予另一种功能，以适应不同的数据类型</p>
+<p>函数名由关键字 operator 和其后要进行重载的运算符符号构成的</p>
+<p>通俗理解就是将数的相加、输出、比较判断等运算重载为直接对对象进行操作</p>
+<p>六、<strong>继承</strong></p>
+<p>class A: public B { }; 其中A类称为子类 或 派生类，B类成为父类 或 基类</p>
+<p>派生类中的成员包含从基类继承的和自己增加的成员</p>
+<ul>
+<li>继承方式 语法： class 子类: 继承方式 父类<ul>
+<li>公共继承 public</li>
+<li>保护继承 protected</li>
+<li>私有继承 private</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">public</th>
+<th>protected</th>
+<th>private</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">公有继承</td>
+<td style="text-align:left">public</td>
+<td>protected</td>
+<td>不可见</td>
+</tr>
+<tr>
+<td style="text-align:left">保护继承</td>
+<td style="text-align:left">protected</td>
+<td>protected</td>
+<td>不可见</td>
+</tr>
+<tr>
+<td style="text-align:left">私有继承</td>
+<td style="text-align:left">private</td>
+<td>private</td>
+<td>不可见</td>
+</tr>
+</tbody>
+</table>
+<p>tips：</p>
+<ol>
+<li><p>父类中私有成员也被子类继承下去了，只是由编译器隐藏后不能访问</p>
+</li>
+<li><p>继承中，先调用父类构造函数，再调用子类构造函数，析构顺序与构造相反</p>
+</li>
+</ol>
+<ul>
+<li>继承同名成员的处理方式<ul>
+<li>访问子类同名成员 直接访问即可</li>
+<li>访问父类同名成员 需要添加作用域</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Base()&#123;m_A = <span class="number">100</span>;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="keyword">int</span> m_A;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span>:</span> <span class="keyword">public</span> Base&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Son()&#123;m_A = <span class="number">200</span>;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="keyword">int</span> m_A;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Son s;</span><br><span class="line">    s.func();<span class="comment">//直接访问子类同名成员</span></span><br><span class="line">    s.Base::func();<span class="comment">//添加作用域访问父类同名成员</span></span><br><span class="line">&#125;<span class="comment">//这里是子类以对象的方式进行访问</span></span><br></pre></td></tr></table></figure>
+<p>*tips：对于同名静态成员处理方式与上面相同，不过有通过对象和通过类名两种访问方式</p>
+<ul>
+<li>多继承语法：class 子类: 继承方式 父类1, 继承方式 父类2 …</li>
+<li>菱形继承（草泥马的例子好形象2333)</li>
+</ul>
+<blockquote>
+<p>羊继承了动物的数据，驼同样继承了动物的数据，当草泥马使用数据时，就会产生二义性。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> m_Age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//继承前加virtual关键字后，变为虚继承</span></span><br><span class="line"><span class="comment">//此时公共的父类Animal称为虚基类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sheep</span> :</span> <span class="keyword">virtual</span> <span class="keyword">public</span> Animal &#123;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tuo</span>   :</span> <span class="keyword">virtual</span> <span class="keyword">public</span> Animal &#123;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SheepTuo</span> :</span> <span class="keyword">public</span> Sheep, <span class="keyword">public</span> Tuo &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SheepTuo st;</span><br><span class="line">	st.Sheep::m_Age = <span class="number">100</span>;</span><br><span class="line">	st.Tuo::m_Age = <span class="number">200</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"st.Sheep::m_Age = "</span> &lt;&lt; st.Sheep::m_Age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"st.Tuo::m_Age = "</span> &lt;&lt;  st.Tuo::m_Age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"st.m_Age = "</span> &lt;&lt; st.m_Age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>*tips：采用虚继承解决菱形继承的问题，虚继承的目的是让某个类做出声明，承诺愿意共享它的基类</p>
+<p>七、<strong>多态</strong></p>
+<p>分类：</p>
+<ul>
+<li>静态多态：函数重载和运算符重载属于静态多态，复用函数名</li>
+<li>动态多态：派生类和虚函数实现运行时多态</li>
+</ul>
+<p>区别：静态–函数地址早绑定 - 编译阶段确定函数地址</p>
+<p>动态–函数地址晚绑定 - 运行阶段确定函数地址</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//函数前加上virtual关键字，变成虚函数，编译器在编译的时候就不能确定函数调用</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span>:</span><span class="keyword">public</span> Animal&#123;<span class="comment">//继承Animal类</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//Q:这里为virtual为什么可以省略不写</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span><span class="keyword">public</span> Animal&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DoSpeak</span><span class="params">(Animal &amp; animal)</span></span>&#123;</span><br><span class="line">    animal.speak();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Cat cat;</span><br><span class="line">    DoSpeak(cat);<span class="comment">//传入什么对象，就调用什么对象的寒素</span></span><br><span class="line">    Dog dog;</span><br><span class="line">    DoSpeak(dog);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>多态满足条件：1. 有继承关系 2. 子类重写父类中的虚函数</li>
+<li>多态使用：父类指针或引用指向子类对象</li>
+</ul>
+<p>重写：函数返回值类型 函数名 参数列表 完全一致称为重写</p>
+<p>在多态中，通常父类中虚函数饿实现是毫无意义的，主要都是调用子类重写的内容</p>
+<p>因此可以将虚函数改为<strong>纯虚函数</strong></p>
+<ul>
+<li>纯虚函数语法：virtual 返回值类型 函数名 (参数列表) = 0;</li>
+</ul>
+<p>当类中有了虚函数（虚构造函数或虚析构函数），这个类也成为<strong>抽象类</strong>（类中只要有一个纯虚函数就成为抽象类）</p>
+<p>抽象类特点：</p>
+<ol>
+<li><p>无法实例化对象</p>
+</li>
+<li><p>子类必须重写抽象类中的纯虚函数，否则也属于抽象类</p>
+</li>
+</ol>
+<p>Q：多态使用时，子类中开辟属性到堆区（new），父类指针在释放时无法调用子类的析构代码</p>
+<p>A：将父类中的析构函数改为<strong>虚析构</strong>或<strong>纯虚析构</strong></p>
+<ul>
+<li>虚析构和纯虚析构共性：<ul>
+<li>可以解决父类指针释放子类对象的问题</li>
+<li>都需要有具体的函数实现</li>
+</ul>
+</li>
+<li>虚析构和纯虚析构区别：<ul>
+<li>纯虚析构，该类属于抽象类，无法实例化对象</li>
+</ul>
+</li>
+</ul>
+<p>虚析构语法：virtual ~类名 () {}</p>
+<p>纯虚析构语法：类内 -&gt; virtual ~类名() = 0;  类外 -&gt; 类名::~类名() {}</p>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><p>C++中对文件操作许哟啊包含头文件<code>&lt;fstream&gt;</code></p>
+<p>文件类型：</p>
+<ol>
+<li>文本文件：以ASCII码形式储存在计算机中</li>
+<li>二进制文件：以二进制形式存储在计算机中</li>
+</ol>
+<p>操作文件的三大类：</p>
+<ol>
+<li>ofstream：写操作</li>
+<li>ifstream：读操作</li>
+<li>fstream：读写操作</li>
+</ol>
+<h3 id="文本文件"><a href="#文本文件" class="headerlink" title="文本文件"></a>文本文件</h3><ul>
+<li>写文件<ol>
+<li>包含头文件<code>#include&lt;fstream&gt;</code></li>
+<li>创建流对象<code>ofstream ofs;</code></li>
+<li>打开文件<code>ofs.open(&quot;file_path&quot;, way);</code></li>
+<li>写数据<code>ofs&lt;&lt;&quot;writing data&quot;;</code></li>
+<li>关闭文件<code>ofs.close();</code></li>
+</ol>
+</li>
+<li>文件打开方式</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">打开方式</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ios::in</td>
+<td style="text-align:center">为读文件而打开文件</td>
+</tr>
+<tr>
+<td style="text-align:center">ios::out</td>
+<td style="text-align:center">为写文件而打开文件</td>
+</tr>
+<tr>
+<td style="text-align:center">ios::ate</td>
+<td style="text-align:center">初始位置：文件尾</td>
+</tr>
+<tr>
+<td style="text-align:center">ios::app</td>
+<td style="text-align:center">追加方式写文件</td>
+</tr>
+<tr>
+<td style="text-align:center">ios::trunc</td>
+<td style="text-align:center">如果文件存在先删除，再创建</td>
+</tr>
+<tr>
+<td style="text-align:center">ios::binary</td>
+<td style="text-align:center">二进制方式</td>
+</tr>
+</tbody>
+</table>
+<p>文件打开方式可以配合使用，利用<code>|</code>操作符</p>
+<p>e.g. 用二进制方式写文件<code>ios::binary|ios::out</code></p>
+<ul>
+<li><p>读文件</p>
+<ol>
+<li><p>包含头文件<code>#include&lt;fstream&gt;</code></p>
+</li>
+<li><p>创建流对象<code>ifstream ifs;</code></p>
+</li>
+<li><p>打开文件<code>ifs.open(&quot;file_path&quot;, way);</code>，利用<code>is_open</code>函数可以判断文件是否打开成功</p>
+</li>
+<li><p>读数据 四种方式</p>
+<ul>
+<li><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">while</span>(ifs &gt;&gt; buf)&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; buf &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> buf[<span class="number">1024</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">while</span>(ifs.getline(buf, <span class="keyword">sizeof</span>(buf)))&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; buf &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> buf;</span><br><span class="line"><span class="keyword">while</span>(getline(ifs, buf))&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; buf &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c;</span><br><span class="line"><span class="keyword">while</span>((c = ifs.get()) != EOF)&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>关闭文件<code>ifs.close();</code></p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="二进制文件"><a href="#二进制文件" class="headerlink" title="二进制文件"></a>二进制文件</h3><p>打开方式指定为<code>ios::binary</code></p>
+<ul>
+<li>写文件 利用流对象调用成员函数wirte</li>
+</ul>
+<p>函数原型 <code>ofstream&amp; write(const char * buffer,int len);</code></p>
+<ul>
+<li>写文件 利用流对象调用成员函数read</li>
+</ul>
+<p>函数原型 <code>ifstream&amp; read(char *buffer,int len);</code></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>_Silhouttes</span>
+                    </p>
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/c/"># c++</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2021/03/17/Cpp-learning-note-3/">Cpp_learningnote3</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© _Silhouttes | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
