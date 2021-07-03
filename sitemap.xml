@@ -242,20 +242,6 @@
 
   
   <url>
-    <loc>http://yoursite.com/tags/NN/</loc>
-    <lastmod>2021-07-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/python/</loc>
-    <lastmod>2021-07-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/tags/learning/</loc>
     <lastmod>2021-07-03</lastmod>
     <changefreq>daily</changefreq>
@@ -264,6 +250,20 @@
   
   <url>
     <loc>http://yoursite.com/tags/hexo/</loc>
+    <lastmod>2021-07-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/NN/</loc>
+    <lastmod>2021-07-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/python/</loc>
     <lastmod>2021-07-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -284,13 +284,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Linux/</loc>
-    <lastmod>2021-07-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/tags/C/</loc>
     <lastmod>2021-07-03</lastmod>
     <changefreq>daily</changefreq>
@@ -298,7 +291,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/deeplearning/</loc>
+    <loc>http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2021-07-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/Linux/</loc>
     <lastmod>2021-07-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -319,6 +319,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2021-07-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/LaTex/</loc>
     <lastmod>2021-07-03</lastmod>
     <changefreq>daily</changefreq>
@@ -326,14 +333,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2021-07-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</loc>
+    <loc>http://yoursite.com/tags/deeplearning/</loc>
     <lastmod>2021-07-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -368,14 +368,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/tensorflow/</loc>
+    <loc>http://yoursite.com/tags/about-life/</loc>
     <lastmod>2021-07-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/about-life/</loc>
+    <loc>http://yoursite.com/tags/tensorflow/</loc>
     <lastmod>2021-07-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
