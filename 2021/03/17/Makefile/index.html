@@ -201,7 +201,8 @@
         </header>
 
         <div class="post-content">
-            <h2 id="Makefile-learning"><a href="#Makefile-learning" class="headerlink" title="Makefile_learning"></a>Makefile_learning</h2><blockquote>
+            <p>[toc]</p>
+<h2 id="Makefile-learning"><a href="#Makefile-learning" class="headerlink" title="Makefile_learning"></a>Makefile_learning</h2><blockquote>
 <p>教程：<a href="http://c.biancheng.net/makefile/" target="_blank" rel="noopener">http://c.biancheng.net/makefile/</a></p>
 </blockquote>
 <p>makefile描述的是文件编译的相关规则，由依赖的关系和执行的命令两部分组成</p>
@@ -277,7 +278,7 @@
 <tbody>
 <tr>
 <td>$@</td>
-<td>表示规则的目标文件名。如果目标是一个文档文件（Linux 中，一般成 .a 文件为文档文件，也成为静态的库文件）， 那么它代表这个文档的文件名。在多目标模式规则中，它代表的是触发规则被执行的文件名。</td>
+<td>表示规则的目标文件名。如果目标是一个文档文件（Linux 中，一般成 .a 文件为文档文件，也称为静态的库文件）， 那么它代表这个文档的文件名。在多目标模式规则中，它代表的是触发规则被执行的文件名。</td>
 </tr>
 <tr>
 <td>$%</td>
@@ -289,11 +290,11 @@
 </tr>
 <tr>
 <td>$?</td>
-<td>所有比目标文件更新的依赖文件列表，空格分隔。如果目标文件时静态库文件，代表的是库文件（.o 文件）。</td>
+<td>所有比目标文件更新的依赖文件列表，空格分隔。如果目标文件是静态库文件，代表的是库文件（.o 文件）。</td>
 </tr>
 <tr>
 <td>$^</td>
-<td>代表的是所有依赖文件列表，使用空格分隔。如果目标是静态库文件，它所代表的只能是所有的库成员（.o 文件）名。 一个文件可重复的出现在目标的依赖中，变量“$^”只记录它的第一次引用的情况。就是说变量“$^”会去掉重复的依赖文件。</td>
+<td>代表的是所有依赖文件列表，使用空格分隔。如果目标是静态库文件，它所代表的只能是所有的库成员（.o 文件）名。 一个文件可重复的出现在目标的依赖中，变量“\$^”只记录它的第一次引用的情况。就是说变量“\$^”会去掉重复的依赖文件。</td>
 </tr>
 <tr>
 <td>$+</td>
@@ -305,6 +306,323 @@
 </tr>
 </tbody>
 </table>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">test:test.o test1.o test2.o</span></span><br><span class="line">         gcc -o <span class="variable">$@</span> <span class="variable">$^</span></span><br><span class="line"><span class="section">test.o:test.c test.h</span></span><br><span class="line">         gcc -o <span class="variable">$@</span> <span class="variable">$&lt;</span></span><br><span class="line"><span class="section">test1.o:test1.c test1.h</span></span><br><span class="line">         gcc -o <span class="variable">$@</span> <span class="variable">$&lt;</span></span><br><span class="line"><span class="section">test2.o:test2.c test2.h</span></span><br><span class="line">         gcc -o <span class="variable">$@</span> <span class="variable">$&lt;</span></span><br></pre></td></tr></table></figure>
+<p>GNU make 中在这些变量中加入字符 “D” 或者 “F” 就形成了一系列变种的自动化变量，这些自动化变量可以对文件的名称进行操作。</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(@D)</td>
+<td>表示文件的目录部分（不包括斜杠）。如果 “$\@” 表示的是 “dir/foo.o” 那么 “\$(@D)” 表示的值就是 “dir”。如果 “\$@” 不存在斜杠（文件在当前目录下），其值就是 “.”。</td>
+</tr>
+<tr>
+<td>$(@F)</td>
+<td>表示的是文件除目录外的部分（实际的文件名）。如果 “\$@” 表示的是 “dir/foo.o”，那么 “\$@F” 表示的值为 “dir”。</td>
+</tr>
+<tr>
+<td>\$(*D) ​\$(*F)</td>
+<td>分别代表 “茎” 中的目录部分和文件名部分</td>
+</tr>
+<tr>
+<td>\$(%D) \$(%F)</td>
+<td>当以 “archive(member)” 形式静态库为目标时，分别表示库文件成员 “member” 名中的目录部分和文件名部分。(?)</td>
+</tr>
+<tr>
+<td>\$(&lt;D) ​\$(&lt;F)</td>
+<td>表示第一个依赖文件的目录部分和文件名部分。</td>
+</tr>
+<tr>
+<td>\$(^D) ​\$(^F)</td>
+<td>分别表示所有依赖文件的目录部分和文件部分。</td>
+</tr>
+<tr>
+<td>\$(+D) ​\$(+F)</td>
+<td>分别表示所有的依赖文件的目录部分和文件部分。</td>
+</tr>
+<tr>
+<td>\$(?D) ​\$(?F)</td>
+<td>分别表示更新的依赖文件的目录部分和文件名部分。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="makefile目标文件搜索（VPATH和vpath）"><a href="#makefile目标文件搜索（VPATH和vpath）" class="headerlink" title="makefile目标文件搜索（VPATH和vpath）"></a>makefile目标文件搜索（VPATH和vpath）</h3><ul>
+<li><p>VAPTH和vpath区别：VPATH是环境变量，使用时需要指定文件的路径；vpath是关键字，按照模式搜索，也可以说是选择搜索。搜索时不仅需要加上文件的路径，还需要加上相应的限制条件。</p>
+</li>
+<li><p>VAPTH的使用 -&gt; 检索路径下的所有文件</p>
+</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VPATH := src <span class="comment">#把src的值赋值给变量VPATH</span></span><br></pre></td></tr></table></figure>
+<p>存在多个路径，使用<strong>空格或冒号分隔</strong>开，搜索顺序为书写顺序</p>
+<ul>
+<li>vpath的使用（选择性搜索）-&gt; 文件数量大时可以提高搜索效率</li>
+</ul>
+<p>VPATH 是搜索路径下所有的文件，而 vpath 更像是添加了限制条件，会过滤出一部分再去寻找。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vpath</span> PATTERN DIRECTORIES <span class="comment"># PATTERN：要寻找的条件 DIRECTORIES：寻找的路径</span></span><br><span class="line"><span class="keyword">vpath</span> PATTERN <span class="comment"># 可以使用通配符% e.g. "%.c"搜索所有的.c文件</span></span><br><span class="line"><span class="keyword">vpath</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>vpath PATTERN DIRECTORIES<br>为所有符合模式“PATTERN”的文件指定搜索目录“DIRECTORIES” 。多个目录使用空格或者冒号（：）分开。</li>
+<li>vpath PATTERN<br>清除之前为符合模式“PATTERN”的文件设置的搜索路径。</li>
+<li>vpath<br>清除所有已被设置的文件搜索路径。</li>
+</ol>
+<h3 id="makefile隐含规则"><a href="#makefile隐含规则" class="headerlink" title="makefile隐含规则"></a>makefile隐含规则</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">test:test.o</span></span><br><span class="line">	gcc -o test test.o</span><br><span class="line"><span class="section">test.o:test.c</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>隐含条件只能省略中间目标文件重建的命令和规则，最终目标的命令和规则不能省略</p>
+</blockquote>
+<p>工作流程：make执行过程中找到隐含规则，提供了此目标的基本依赖关系。确定目标的依赖文件和重建目标需要使用的命令行。隐含规则所提供的依赖文件只是一个基本的。当需要<strong>增加</strong>这个文件的依赖文件的时候要在 Makefile 中使用<strong>没有命令行的规则</strong>给出。</p>
+<h3 id="makefile条件判断"><a href="#makefile条件判断" class="headerlink" title="makefile条件判断"></a>makefile条件判断</h3><p>条件语句可以根据一个变量的值来控制make执行或者忽略makefile的特定部分，条件语句可以是两个不同的变量或者是常量和变量之间的比较。</p>
+<blockquote>
+<p>条件语句只能用于控制make实际执行的makefile部分，不能控制规则的shell命令执行的过程</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ifeq</td>
+<td>判断参数是否相等，相等为 true，不相等为 false。</td>
+</tr>
+<tr>
+<td>ifneq</td>
+<td>判断参数是否不相等，不相等为 true，相等为 false。</td>
+</tr>
+<tr>
+<td>ifdef</td>
+<td>判断是否有值，有值为 true，没有值为 false。</td>
+</tr>
+<tr>
+<td>ifndef</td>
+<td>判断是否有值，没有值为 true，有值为 false。</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ifeq</span> (VAL1,VAL2)<span class="comment"># 或者 ifeq 'VAL1' 'VAL2'</span></span><br><span class="line"><span class="keyword">ifdef</span> VARIABLE-NAME</span><br></pre></td></tr></table></figure>
+<h3 id="makefile伪目标"><a href="#makefile伪目标" class="headerlink" title="makefile伪目标"></a>makefile伪目标</h3><p>伪目标不会创建目标文件，只是想执行这个目标下面的命令。</p>
+<ul>
+<li>使用伪目标的原因<ul>
+<li>避免makefile中定义的只执行的命令和工作目录下实际文件出现名字冲突</li>
+<li>提高执行make的效率</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>将一个目标声明为伪目标的方法是将它作为特殊的目标<code>.PHONY</code>的依赖</li>
+</ol>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>:clean</span></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	rm -rf *.o test</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>make在并行和递归执行的过程中，存在一个变量定义为所有需要make的子目录。</li>
+</ol>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SUBDIRS = foo bar baz</span><br><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>:subdirs $(SUBDIRS)</span></span><br><span class="line"><span class="section">subdirs:<span class="variable">$(SUBDIRS)</span></span></span><br><span class="line"><span class="variable">$(SUBDIRS)</span>:</span><br><span class="line">	<span class="variable">$(MAKE)</span> -C <span class="variable">$@</span></span><br><span class="line"><span class="section">foo:baz #规定三个子目录的编译顺序，baz比foo先执行，最后执行bar</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>伪目标实现多文件编译</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>:all</span></span><br><span class="line"><span class="section">all:test1 test2  test3</span></span><br><span class="line"><span class="section">test1:test1.o</span></span><br><span class="line">	gcc -o <span class="variable">$@</span> <span class="variable">$^</span></span><br><span class="line"><span class="section">test2:test2.o</span></span><br><span class="line">	gcc -o <span class="variable">$@</span> <span class="variable">$^</span></span><br><span class="line"><span class="section">test3:test3.o</span></span><br><span class="line">	gcc -o <span class="variable">$@</span> <span class="variable">$^</span></span><br></pre></td></tr></table></figure>
+<h3 id="makefile常用字符串处理函数"><a href="#makefile常用字符串处理函数" class="headerlink" title="makefile常用字符串处理函数"></a>makefile常用字符串处理函数</h3><p>函数的语法结构</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&lt;function&gt; &lt;arguments&gt;)  <span class="comment"># or $&#123;&lt;function&gt; &lt;arguments&gt;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>其中，function是函数名，arguments是函数的参数，参数之间要用逗号分隔开，而函数名和参数之间用空格分开。调用函数的时候要使用字符<code>$</code>，后面跟小括号或者花括号。</p>
+<ul>
+<li>模式字符串替换函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">patsubst</span> &lt;pattern&gt;,&lt;replacement&gt;,&lt;text&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>查找text中的单词是否符合模式pattern，如果匹配的话，则用replacement替换。返回值为替换后的新字符串。 </p>
+<ul>
+<li>字符串替换函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">subst</span> &lt;form&gt;,&lt;to&gt;,&lt;text&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>将字符串中的form替换成to，返回值为替换后的新字符串。</p>
+<ul>
+<li>去空格函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">strip</span> &lt;string&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>去掉字符串开后和结尾的空格，并将字符中间的多个连续的空格合并成为一个空格，返回值为去掉空格的字符串。</p>
+<ul>
+<li>查找字符串函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">findstring</span> &lt;find&gt;,&lt;in&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>查找in中的find，如果我们的目标字符串存在。返回值为目标字符串，如果不存在就返回空值。</p>
+<ul>
+<li>过滤函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">filter</span> &lt;pattern&gt;,&lt;text&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>过滤出text中符合模式pattern的字符串，可以有多个pattern。返回值为过滤后的字符串。</p>
+<ul>
+<li>反过滤函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">filter</span>-out &lt;pattern&gt;,&lt;text&gt;)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>排序函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">sort</span> &lt;list&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>将list中的单词排序（升序）。返回值为排序后的字符串。</p>
+<blockquote>
+<p>sort会去除重复的字符串</p>
+</blockquote>
+<ul>
+<li>取单词函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">word</span> &lt;n&gt;,&lt;text&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>取出text中的第n个单词。</p>
+<h3 id="makefile常用文件名操作函数"><a href="#makefile常用文件名操作函数" class="headerlink" title="makefile常用文件名操作函数"></a>makefile常用文件名操作函数</h3><blockquote>
+<p>下面每个函数的参数字符串都会被当作是一个系列的文件名来看待</p>
+</blockquote>
+<ul>
+<li>取目录函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">dir</span> &lt;names&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>从文件名序列names中取出目录部分，如果names中没有<code>/</code>，取出的值为<code>./</code>。返回值为目录部分，指的是最后一个反斜杠之前的部分。</p>
+<ul>
+<li>取文件函数名</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">notdir</span> &lt;names)</span></span><br></pre></td></tr></table></figure>
+<p>从文件名序列names中取出非目录部分。</p>
+<ul>
+<li>取后缀名函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">suffix</span> &lt;names&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>从文件名序列names中取出各个问价的后缀名。返回值为后缀序列，如果没有后缀名，返回空字符串。</p>
+<ul>
+<li>取前缀函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">basename</span> &lt;names&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>获取的是文件的前缀名，包含文件路径的部分。</p>
+<ul>
+<li>添加后缀名函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">addsuffix</span> &lt;<span class="built_in">suffix</span>&gt;,&lt;names&gt;)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加前缀名函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">addprefix</span> &lt;prefix&gt;,&lt;names&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>可以使用这个函数给文件添加路径</p>
+<ul>
+<li>链接函数</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">join</span> &lt;list1&gt;,&lt;list2&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>把list2中的单词对应地拼接到list1的后面。如果list1的单词比list2多，那么list1中多出来的单词将保持原样；如果list1中的单词比list2的少，那么list2中多出来的单词将保持原样。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OBJ = <span class="variable">$(<span class="built_in">join</span> src car,abc zxc qwe)</span></span><br><span class="line"><span class="section">all:</span></span><br><span class="line">	@echo <span class="variable">$(OBJ)</span></span><br></pre></td></tr></table></figure>
+<p>结果输出为srcabc carzxc qwe</p>
+<ul>
+<li>获取匹配模式文件函数名</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">wildcard</span> PATTERN)</span></span><br></pre></td></tr></table></figure>
+<p>列出当前目录下的所有符合模式的PATTERN格式的文件名。返回值为空格分隔并且存在当前目录下的所有符合模式PATTERN的文件名。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OBJ = $(*.c *.h)<span class="comment"># 这里可以不适用wildcard函数 因为echo属于shell函数，通配符会自动展开，注意这里不是规则，是执行语句</span></span><br><span class="line"><span class="section">all:</span></span><br><span class="line">	@echo <span class="variable">$(OBJ)</span></span><br></pre></td></tr></table></figure>
+<h3 id="makefile中其他常用函数"><a href="#makefile中其他常用函数" class="headerlink" title="makefile中其他常用函数"></a>makefile中其他常用函数</h3><ul>
+<li>foreach</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">foreach</span> &lt;var&gt;,&lt;list&gt;,&lt;text&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>把参数<code>&lt;list&gt;</code>中的单词逐一取出放到参数<code>&lt;var&gt;</code>所指定的变量中，然后再执行<code>&lt;text&gt;</code>所包含的表达式。每一次<code>&lt;text&gt;</code>会返回一个字符串，循环过程中，<code>&lt;text&gt;</code>所返回的每个字符串会以空格分割，最后当整个循环结束的时候，<code>&lt;text&gt;</code>所返回的每个字符串所组成的整个字符串（以空格分隔）将会是 foreach 函数的返回值。所以<code>&lt;var&gt;</code>最好是一个变量名，<code>&lt;list&gt;</code>可以是一个表达式，而<code>&lt;text&gt;</code>中一般会只用<code>&lt;var&gt;</code>这个参数来一次枚举<code>&lt;list&gt;</code>中的单词。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name := a b c d</span><br><span class="line">files := <span class="variable">$(<span class="built_in">foreach</span> val, <span class="variable">$(names)</span>, <span class="variable">$(val)</span>.o)</span></span><br><span class="line"><span class="section">all:</span></span><br><span class="line">	@echo <span class="variable">$(files)</span></span><br></pre></td></tr></table></figure>
+<p>输出为<code>a.o b.o c.o d.o</code></p>
+<blockquote>
+<p>foreah中的var是局部变量，作用域只在函数内</p>
+</blockquote>
+<ul>
+<li>if</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">if</span> &lt;condition&gt;,&lt;then-part&gt;)</span> <span class="comment"># or $(if &lt;condition&gt;,&lt;then-part&gt;,&lt;else-part&gt;)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>call</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">call</span> &lt;expression&gt;,&lt;parm1&gt;,&lt;parm2&gt;,&lt;parm3&gt;,...)</span></span><br></pre></td></tr></table></figure>
+<p>call函数是唯一一个可以用来创建新的参数化的函数，可以用来写一个非常复杂的表达式，用call来向这个表达式传递参数。当 make 执行这个函数的时候，<code>expression</code>参数中的变量\$(1)、\$(2)、\$(3)等，会被参数<code>parm1</code>，<code>parm2</code>，<code>parm3</code>依次取代。而<code>expression</code>的返回值就是 call 函数的返回值。</p>
+<ul>
+<li>origin</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">origin</span> &lt;variable&gt;)</span></span><br></pre></td></tr></table></figure>
+<p>origin函数告诉你变量从哪里来</p>
+<p>下面是origin函数返回值：</p>
+<ul>
+<li><p>“undefined”：如果<code>&lt;variable&gt;</code>从来没有定义过，函数将返回这个值。</p>
+</li>
+<li><p>“default”：如果<code>&lt;variable&gt;</code>是一个默认的定义，比如说“CC”这个变量。</p>
+</li>
+<li>“environment”：如果<code>&lt;variable&gt;</code>是一个环境变量并且当Makefile被执行的时候，“-e”参数没有被打开。</li>
+<li>“file”：如果<code>&lt;variable&gt;</code>这个变量被定义在Makefile中，将会返回这个值。</li>
+<li>“command line”：如果<code>&lt;variable&gt;</code>这个变量是被命令执行的，将会被返回。</li>
+<li>“override”：如果<code>&lt;variable&gt;</code>是被override指示符重新定义的。</li>
+<li>“automatic”：如果<code>&lt;variable&gt;</code>是一个命令运行中的自动化变量。</li>
+</ul>
+<h3 id="makefile命令的编写"><a href="#makefile命令的编写" class="headerlink" title="makefile命令的编写"></a>makefile命令的编写</h3><ul>
+<li><p>命令回显</p>
+<p>通常make在执行命令行之前会把要执行的命令行输出到标准输出设备，我们称之为“回显”。如果规则的命令行以字符<code>@</code>开始，则make在执行的时候不会显示这个将要被执行的命令。</p>
+<p>我们在执行 make 时添加上一些参数，可以控制命令行是否输出。</p>
+<p>当使用 make 的时候加上参数<code>-n</code>或者是<code>--just-print</code> ，执行时只显示所要执行的命令，但不会真正的执行这个命令。只有在这种情况下 make 才会打印出所有的 make 需要执行的命令，其中包括了使用的“@”字符开始的命令。</p>
+<p>而 make 参数<code>-s</code>或者是<code>--slient</code>则是禁止所有的执行命令的显示。就好像所有的命令行都使用“@”开始一样。</p>
+</li>
+<li><p>命令执行</p>
+<p>当规则中的目标需要被重建的时候，此规则所定义的命令将会被执行，如果是多行的命令，那么每一行命令将是在一个独立的子 shell 进程中被执行。因此，多命令行之间的执行命令时是相互独立的，相互之间不存在往来。</p>
+<p>在 Makefile 中书写在同一行中的多个命令（用<code>;</code>分隔开）属于一个完整的 shell 命令行，书写在独立行的一条命令是一个独立的 shell 命令行。使用反斜杠<code>\</code>来对处于多行的命令进行连接，表示他们是一个完整的shell命令行。</p>
+</li>
+<li><p>并发执行命令</p>
+<p>通过 make 命令行选项 “-j” 或者 “–jobs” 来告诉 make 在同一时刻可以允许多条命令同时执行。如果选项 “-j” 之后存在一个整数，其含义是告诉 make 在同一时刻可以允许同时执行的命令行的数目。这个数字被称为<code>job slots</code>。当 “-j” 选项中没有出现数字的时候，那么同一时间执行的命令数目没有要求。使用默认的<code>job solts</code>，值为1，表示make将串行的执行规则的命令（同一时刻只能由一条命令被执行）。</p>
+</li>
+</ul>
+<h3 id="makefile-include文件包含"><a href="#makefile-include文件包含" class="headerlink" title="makefile include文件包含"></a>makefile include文件包含</h3><p>当make读取到“lnclude”关键字的时候，会暂停读物当前的makefile，而是去读“include”包含的文件，读取结束后再继续读取当前的makefile文件。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include</span> &lt;filenames&gt;</span><br></pre></td></tr></table></figure>
+<p>include使用场景</p>
+<ul>
+<li>将共同使用的变量或者模式规则定义在一个文件中，需要的时候用 “include” 包含这个文件。</li>
+<li>当根据源文件自动产生依赖文件时，我们可以将自动产生的依赖关系保存在另一个文件中。然后在 Makefile 中包含这个文件。</li>
+</ul>
+<blockquote>
+<p>如果使用 “include” 包含文件的时候，指定的文件不是文件的绝对路径或者是为当前文件下没有这个文件，make 会根据文件名会在以下几个路径中去找，首先我们在执行 make 命令的时候可以加入选项 “-I” 或 “–include-dir” 后面添加上指定的路径，如果文件存在就会被使用，如果文件不存在将会在其他的几个路径中搜索： “usr/gnu/include”、”usr/local/include” 和 “usr/include”。</p>
+</blockquote>
+<p>如果在上面的路径没有找到 “include” 指定的文件，make 将会提示一个文件没有找到的警示提示，但是不会退出，而是继续执行 Makefile 的后续的内容。当完成读取整个 Makefile 后，make 将试图使用规则来创建通过 “include” 指定但不存在的文件。当不能创建的时候，文件将会提示致命错误并退出。</p>
+<p>使用时，通常用 “-include” 来代替 “include” 来忽略文件不存在或者是无法创建的错误提示</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">-include</span> &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<p>这种情况下，只有在不能正确完成终极目标的重建时，才会提示错误并退出。</p>
+<p>为了和其它的make程序进行兼容。也可以使用“sinclude”来代替“-include”（GNU所支持的方式）。</p>
+<h3 id="makefile的嵌套执行make"><a href="#makefile的嵌套执行make" class="headerlink" title="makefile的嵌套执行make"></a>makefile的嵌套执行make</h3><p>不同模块有自己的makefile文件，我们只需要控制其他模块中的makefile就可以实现总体的控制。</p>
+<p>我们把最外层的 Makefile 称为是总控 Makefile</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">subsystem:</span></span><br><span class="line">	cd subdir &amp;&amp; <span class="variable">$(MAKE)</span></span><br><span class="line"><span class="comment"># or	</span></span><br><span class="line"><span class="section">subsystem:</span></span><br><span class="line">	<span class="variable">$(MAKE)</span> -C subdir</span><br></pre></td></tr></table></figure>
+<p>变量“CURDIR”，代表make的工作目录。当使用make的选项 -C 的时候，命令会进入指定的目录中，这时该变量会被重新赋值为指定目录。</p>
+<ul>
+<li>export的使用</li>
+</ul>
+<p>如果需要变量的传递（到下一层make），可以使用下列语句</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &lt;variable&gt;</span><br></pre></td></tr></table></figure>
+<p>不需要使用“$“字符。如果所有变量都需要传递，那么只需要使用”export“即可</p>
+<p>Makefile中有两个变量不需使用关键字”export“声明，他们总会传递到下层的Makefile中，分别是 SHELL 和 MAKEFLAGS。其中MAKEFLAGS包含了make的参数信息，这是一个系统级别的环境变量。</p>
+<p>make命令中有几个参数选项并不传递，它们是：”-C”、”-f”、”-o”、”-h” 和 “-W”。如果我们不想传递 MAKEFLAGS 变量的值，在 Makefile 中可以这样来写：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">subsystem:</span></span><br><span class="line">	cd subdir &amp;&amp; <span class="variable">$(MAKE)</span> MAKEFLAGS=</span><br></pre></td></tr></table></figure>
+<ul>
+<li>嵌套执行make</li>
+</ul>
+<p><strong>要提供正确的依赖关系</strong></p>
+<p>当 make 发觉它正在递归调用另一个 make 时，他会启 用–print-directory(-w) 选项，这会使得 make 输出 Entering directory(进入目录) 和 Leaving directory(离开目录) 的信息。当 –directory(-C) 选项被使用时，也会启用这个选项。我们还可以看到每一行中，MAKELEVEL 这个 make 变量的值加上方括号之后被一起输出。</p>
+<h3 id="makefile变量的高级用法"><a href="#makefile变量的高级用法" class="headerlink" title="makefile变量的高级用法"></a>makefile变量的高级用法</h3><ul>
+<li>替换引用</li>
+</ul>
+<p>字符串后缀名的替换（同patsubst函数）</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">foo:=a.c b.c d.c</span><br><span class="line">obj:=$(foo:.c=.o) <span class="comment"># 变量名的后面要使用冒号和参数选项分开，表达式中间不能使用空格</span></span><br><span class="line"><span class="comment"># 更通用的写法</span></span><br><span class="line">obj:=$(foo:%.c:%.o) <span class="comment"># e.g. $(foo:a%c:x%y)</span></span><br><span class="line"><span class="section">all:</span></span><br><span class="line">	@echo <span class="variable">$(obj)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>嵌套引用</li>
+</ul>
+<p>在一个变量的赋值中引用其他的变量（避免使用-别人可能看不懂）</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">first_pass=hello</span><br><span class="line">bar=first</span><br><span class="line">var:=<span class="variable">$(bar)</span>_pass</span><br><span class="line"><span class="section">all:</span></span><br><span class="line">	@echo <span class="variable">$(var)</span> <span class="comment"># 输出结果是hello</span></span><br></pre></td></tr></table></figure>
+<h3 id="makefile控制函数error和warning"><a href="#makefile控制函数error和warning" class="headerlink" title="makefile控制函数error和warning"></a>makefile控制函数error和warning</h3><p>当make执行过程中检测到某些错误时为用户提供消息，并可以控制make执行过程是否继续</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">error</span> TEXT...)</span></span><br></pre></td></tr></table></figure>
+<p>函数说明如下：</p>
+<ul>
+<li>函数功能：产生致命错误，并提示 “TEXT…” 信息给用户，并退出 make 的执行。需要说明的是：”error” 函数是在函数展开时（函数被调用时）才提示信息并结束 make 进程。因此如果函数出现在命令中或者一个递归的变量定义时，读取 Makefile 时不会出现错误。而只有包含 “error” 函数引用的命令被执行，或者定义中引用此函数的递归变量被展开时，才会提示知名信息 “TEXT…” 同时退出 make。</li>
+<li>返回值：空</li>
+<li>函数说明：”error” 函数一般不出现在直接展开式的变量定义中，否则在 make 读取 Makefile 时将会提示致命错误。</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">warning</span> TEXT...)</span></span><br></pre></td></tr></table></figure>
+<p>函数说明如下：</p>
+<ul>
+<li>函数功能：函数 “warning” 类似于函数 “error” ，区别在于它不会导致致命错误（make不退出），而只是提示 “TEXT…”，make 的执行过程继续。</li>
+<li>返回值：空</li>
+<li>函数说明：用法和 “error” 类似，展开过程相同。</li>
+</ul>
 
         </div>
 
